@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Плёнка и плед — уютное место, где обсуждают кино</title>
+<meta name="description" content="Сюжеты фильмов и сериалов со спойлерами и без, премьеры российского и мирового кино, документальные проекты, телепередачи и подкасты, оценки и отзывы зрителей.">
+<meta property="og:title" content="Плёнка и плед — уютное место, где обсуждают кино">
+<meta property="og:description" content="Сюжеты, премьеры, оценки и тёплые отзывы зрителей.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎞️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FBF4EA; --surface:#FFFDF8; --surface-alt:#F3E6D3;
+  --text:#2B1D16; --text-muted:#7A6656;
+  --accent:#C8553D; --accent-strong:#A9432F; --accent-hover:#8F3726;
+  --gold:#D9A441; --wine:#7A2E3A; --sage:#8A9A6B; --border:#E6D5BF;
+  --on-dark:#FBF4EA;
+  --c-film:#C8553D; --c-series:#7A2E3A; --c-documentary:#8A9A6B; --c-tvshow:#B07A4F; --c-podcast:#C9922F;
+  --shadow:0 8px 24px rgba(122,46,58,.10);
+  --shadow-lift:0 14px 32px rgba(122,46,58,.16);
+  --serif:"Playfair Display", Georgia, "Times New Roman", serif;
+  --sans:Manrope, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --r-card:18px; --r-field:12px;
+  --wrap:1240px;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#1E1512; --surface:#2A1E19; --surface-alt:#352620;
+    --text:#F5E9DA; --text-muted:#BFA88F;
+    --accent:#E07A5F; --accent-strong:#E07A5F; --accent-hover:#EA9479;
+    --gold:#E8B85A; --wine:#9C3D4C; --sage:#A3B385; --border:#4A372D;
+    --c-film:#E07A5F; --c-series:#C25A6A; --c-documentary:#A3B385; --c-tvshow:#C99A6E; --c-podcast:#E8B85A;
+    --shadow:0 8px 24px rgba(0,0,0,.35); --shadow-lift:0 14px 32px rgba(0,0,0,.45);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1E1512; --surface:#2A1E19; --surface-alt:#352620;
+  --text:#F5E9DA; --text-muted:#BFA88F;
+  --accent:#E07A5F; --accent-strong:#E07A5F; --accent-hover:#EA9479;
+  --gold:#E8B85A; --wine:#9C3D4C; --sage:#A3B385; --border:#4A372D;
+  --c-film:#E07A5F; --c-series:#C25A6A; --c-documentary:#A3B385; --c-tvshow:#C99A6E; --c-podcast:#E8B85A;
+  --shadow:0 8px 24px rgba(0,0,0,.35); --shadow-lift:0 14px 32px rgba(0,0,0,.45);
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{overflow-x:clip;scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 84px)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:clamp(16px,1.05vw + 8px,17px);line-height:1.65;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}
+a{color:var(--accent-strong)}
+:root[data-theme="dark"] a{color:var(--accent)}
+h1,h2,h3{font-family:var(--serif);line-height:1.15;margin:0;font-weight:600}
+h2{font-size:clamp(30px,3vw + 10px,42px)}
+h3{font-size:clamp(20px,1vw + 12px,22px)}
+p{margin:0}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.wrap{width:min(100% - 40px,var(--wrap));margin-inline:auto}
+section{padding:clamp(56px,7vw,96px) 0}
+.section-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px 32px;margin-bottom:32px}
+.section-head p{color:var(--text-muted);max-width:52ch}
+.alt{background:var(--surface-alt)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:10px 22px;border-radius:999px;border:1.5px solid transparent;font-weight:600;font-size:15px;text-decoration:none;transition:background .2s,color .2s,border-color .2s,transform .2s}
+.btn-primary{background:var(--accent-strong);color:#fff}
+.btn-primary:hover{background:var(--accent-hover)}
+:root[data-theme="dark"] .btn-primary{color:#1E1512}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn-primary{color:#1E1512}}
+.btn-ghost{background:transparent;border-color:var(--border);color:var(--text)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent-strong)}
+.btn-light{background:var(--on-dark);color:#5E2330}
+.btn-light:hover{background:#fff}
+.btn-outline-light{background:transparent;color:var(--on-dark);border-color:rgba(251,244,234,.55)}
+.btn-outline-light:hover{border-color:var(--on-dark);background:rgba(251,244,234,.08)}
+.btn-sm{min-height:38px;padding:6px 16px;font-size:14px}
+.icon-btn{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--surface);color:var(--text);position:relative}
+.icon-btn:hover{border-color:var(--accent)}
+.icon-btn svg{width:20px;height:20px}
+.badge-count{position:absolute;top:-4px;right:-4px;min-width:20px;height:20px;padding:0 5px;border-radius:999px;background:var(--accent-strong);color:#fff;font-size:11px;font-weight:700;display:grid;place-items:center}
+.badge-count:empty,.badge-count[data-zero]{display:none}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:50;background:transparent;transition:background .25s,box-shadow .25s}
+.site-header.scrolled{background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--border)}
+.header-in{display:flex;align-items:center;gap:20px;height:72px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-family:var(--serif);font-weight:700;font-size:21px;white-space:nowrap}
+.logo svg{width:36px;height:36px;flex:none}
+.nav{display:flex;gap:4px;margin-inline:auto}
+.nav a{padding:8px 14px;border-radius:999px;text-decoration:none;color:var(--text);font-weight:500;font-size:15px}
+.nav a:hover{background:var(--surface-alt)}
+.nav a.active{background:var(--surface-alt);color:var(--accent-strong)}
+:root[data-theme="dark"] .nav a.active{color:var(--accent)}
+.header-actions{display:flex;gap:8px;align-items:center}
+.site-header:not(.scrolled) .logo{color:var(--on-dark)}
+.site-header:not(.scrolled) .header-actions .icon-btn{background:rgba(251,244,234,.12);border-color:rgba(251,244,234,.35);color:var(--on-dark)}
+@media (min-width:1024px){
+  .site-header:not(.scrolled) .nav a{color:rgba(251,244,234,.9)}
+  .site-header:not(.scrolled) .nav a:hover,.site-header:not(.scrolled) .nav a.active{background:rgba(251,244,234,.14);color:#fff}
+}
+.search-box{position:relative;display:flex;align-items:center}
+.search-box input{width:0;opacity:0;padding:0;border:0;transition:width .25s,opacity .2s,padding .2s;height:44px;border-radius:999px;background:var(--surface);color:var(--text)}
+.search-box.open input{width:200px;opacity:1;padding:0 16px;border:1px solid var(--border);margin-right:6px}
+.burger{display:none}
+@media (max-width:1023px){
+  .nav{position:fixed;inset:0;z-index:60;flex-direction:column;justify-content:center;align-items:center;gap:10px;background:var(--bg);padding:env(safe-area-inset-top,0px) 20px env(safe-area-inset-bottom,0px);transform:translateY(-100%);visibility:hidden;transition:transform .3s,visibility .3s}
+  .nav.open{transform:none;visibility:visible}
+  .nav a{font-family:var(--serif);font-size:30px;padding:10px 24px}
+  .nav-close{position:absolute;top:calc(env(safe-area-inset-top,0px) + 14px);right:20px}
+  .burger{display:inline-grid}
+  .header-actions{margin-left:auto}
+  .search-box.open input{width:min(46vw,200px)}
+}
+@media (min-width:1024px){.nav-close{display:none}}
+@media (max-width:420px){.logo span{display:none}}
+
+/* Hero */
+.hero{position:relative;color:var(--on-dark);background:linear-gradient(135deg,#4E1C27 0%,#7A2E3A 48%,#A9432F 100%);padding:0;margin-top:-72px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.09;mix-blend-mode:overlay;pointer-events:none}
+.perf{position:absolute;left:0;right:0;height:26px;background:#2B1418;opacity:.75}
+.perf::after{content:"";position:absolute;inset:7px 0;background:repeating-linear-gradient(90deg,transparent 0 14px,rgba(251,244,234,.85) 14px 28px,transparent 28px 40px);-webkit-mask:linear-gradient(#000,#000);border-radius:2px}
+.perf.top{top:72px}.perf.bottom{bottom:0}
+.hero-in{position:relative;display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(32px,5vw,72px);align-items:center;padding:calc(72px + 26px + clamp(48px,7vw,96px)) 0 calc(26px + clamp(56px,7vw,96px))}
+.hero h1{font-size:clamp(40px,4.6vw + 12px,72px);font-weight:700;letter-spacing:-.01em;max-width:16ch}
+.hero-lead{margin-top:22px;font-size:clamp(17px,.6vw + 13px,19px);max-width:46ch;color:rgba(251,244,234,.88)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero-facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:36px;color:rgba(251,244,234,.85);font-size:15px}
+.hero-facts b{font-family:var(--serif);font-size:22px;color:#fff;font-weight:600;margin-right:4px}
+.hero-anim > *{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+.hero-anim > *:nth-child(2){animation-delay:.08s}.hero-anim > *:nth-child(3){animation-delay:.16s}.hero-anim > *:nth-child(4){animation-delay:.24s}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+/* Ticket */
+.ticket{position:relative;display:grid;grid-template-columns:72px 1fr;background:var(--on-dark);color:#2B1D16;border-radius:16px;box-shadow:0 30px 60px rgba(30,10,14,.35);transform:rotate(1.5deg);animation:ticketIn .9s .3s cubic-bezier(.2,.7,.2,1) both;
+  -webkit-mask:radial-gradient(circle 13px at 72px 0,#0000 98%,#000) top/100% 51% no-repeat,radial-gradient(circle 13px at 72px 100%,#0000 98%,#000) bottom/100% 51% no-repeat;
+  mask:radial-gradient(circle 13px at 72px 0,#0000 98%,#000) top/100% 51% no-repeat,radial-gradient(circle 13px at 72px 100%,#0000 98%,#000) bottom/100% 51% no-repeat}
+@keyframes ticketIn{from{opacity:0;transform:rotate(-4deg) translateY(30px)}to{opacity:1;transform:rotate(1.5deg)}}
+.ticket-stub{border-right:2px dashed #D9C4AA;display:flex;align-items:center;justify-content:center}
+.ticket-stub span{writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--serif);font-size:19px;color:#7A2E3A;font-style:italic;white-space:nowrap}
+.ticket-body{padding:26px 26px 24px}
+.ticket-meta{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;color:#7A6656;font-weight:600}
+.ticket h2{font-size:clamp(26px,2vw + 12px,34px);margin:10px 0 4px}
+.ticket .orig{font-size:14px;color:#7A6656}
+.ticket .verdict{margin-top:14px;font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.45}
+.ticket-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:20px}
+.ticket-score{display:flex;align-items:baseline;gap:6px;font-family:var(--serif);font-size:30px;font-weight:700;color:#7A2E3A}
+.ticket-score small{font-family:var(--sans);font-size:13px;color:#7A6656;font-weight:600}
+.ticket-actions{display:flex;gap:8px}
+.ticket .btn-ghost{color:#2B1D16;border-color:#D9C4AA}
+.ticket .btn.btn-primary{background:#A9432F;color:#fff}
+.ticket .btn{white-space:nowrap}
+.ticket-actions{flex-wrap:wrap}
+@media (max-width:900px){.hero-in{grid-template-columns:1fr}.ticket{transform:none;animation:rise .7s .2s both}}
+
+/* Chips & segmented */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--border);background:var(--surface);border-radius:999px;padding:6px 14px;font-size:14px;font-weight:500;min-height:38px;display:inline-flex;align-items:center;gap:6px}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--text);color:var(--bg);border-color:var(--text)}
+.chip .n{font-size:12px;opacity:.7}
+.tag{display:inline-block;font-size:12.5px;font-weight:600;padding:3px 10px;border-radius:999px;background:var(--surface-alt);color:var(--text-muted)}
+.seg{display:inline-flex;background:var(--surface-alt);border-radius:999px;padding:4px;gap:2px;max-width:100%;overflow-x:auto;scrollbar-width:none}
+.seg::-webkit-scrollbar{display:none}
+.seg button{white-space:nowrap;flex:none}
+.seg button{border:0;background:transparent;border-radius:999px;padding:8px 16px;font-size:14.5px;font-weight:600;color:var(--text-muted);min-height:40px}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--text);box-shadow:0 2px 8px rgba(43,29,22,.10)}
+.seg button .n{font-weight:500;opacity:.65;margin-left:4px;font-size:13px}
+
+/* Poster */
+.poster{position:relative;aspect-ratio:3/4;border-radius:14px;overflow:hidden;background:linear-gradient(160deg,var(--g1),var(--g2));color:#FBF4EA;display:flex;flex-direction:column;justify-content:space-between;padding:16px 16px 16px 26px;isolation:isolate}
+.poster::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:9px;background:repeating-linear-gradient(180deg,rgba(251,244,234,.45) 0 7px,transparent 7px 16px);border-radius:2px}
+.poster::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(120% 80% at 80% 0%,rgba(255,255,255,.18),transparent 60%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E")}
+.poster-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;font-size:12px;font-weight:700;letter-spacing:.03em}
+.poster-top .ptype{background:rgba(20,10,8,.32);padding:4px 10px;border-radius:999px;backdrop-filter:blur(4px)}
+.poster-title{font-family:var(--serif);font-weight:700;font-size:clamp(24px,2vw + 10px,30px);line-height:1.05;text-shadow:0 2px 14px rgba(0,0,0,.25);overflow-wrap:anywhere;hyphens:auto}
+.poster-title.long{font-size:clamp(20px,1.4vw + 9px,24px)}
+.poster-foot{display:flex;justify-content:space-between;align-items:end;font-size:13px;font-weight:600;opacity:.92}
+.poster-foot .yr{font-family:var(--serif);font-size:20px;font-style:italic}
+.poster .badge-era{position:absolute;right:14px;bottom:44px;font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--gold);color:#2B1D16}
+.poster.sm{padding:12px 12px 12px 22px}
+.poster.sm::before{left:6px;width:7px}
+.poster.sm .poster-title{font-size:20px}
+.poster.sm .poster-title.long{font-size:17px}
+.fav-btn{width:40px;height:40px;border-radius:50%;border:0;background:rgba(20,10,8,.32);color:#FBF4EA;display:grid;place-items:center;backdrop-filter:blur(4px);flex:none}
+.fav-btn svg{width:20px;height:20px}
+.fav-btn[aria-pressed="true"] svg path{fill:#F2C26B;stroke:#F2C26B}
+
+/* Premieres */
+.strip{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(260px,300px);gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 4px 18px;scrollbar-width:thin}
+.strip > *{scroll-snap-align:start}
+.prem{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-card);overflow:hidden;display:flex;flex-direction:column}
+.prem .poster{aspect-ratio:16/10;border-radius:0}
+.prem-badge{background:var(--gold);color:#2B1D16;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:700}
+.prem-badge.out{background:var(--sage)}
+.prem-body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.prem-meta{font-size:13.5px;color:var(--text-muted);display:flex;flex-wrap:wrap;gap:4px 12px}
+.prem-body p{font-size:15px}
+.prem-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:8px}
+.countdown{font-size:13.5px;font-weight:600;color:var(--accent-strong)}
+:root[data-theme="dark"] .countdown{color:var(--accent)}
+.placeholder-note{font-style:italic;color:var(--text-muted)}
+
+/* Catalog */
+.filters{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-card);padding:18px;display:flex;flex-direction:column;gap:16px;box-shadow:var(--shadow)}
+.filters-row{display:flex;flex-wrap:wrap;gap:12px 16px;align-items:center}
+.filters-row .spacer{flex:1}
+.field-inline{display:flex;align-items:center;gap:10px;font-size:14.5px;font-weight:600}
+.field-inline select{height:42px;border-radius:var(--r-field);border:1px solid var(--border);background:var(--surface);padding:0 12px}
+.range-wrap{display:flex;align-items:center;gap:10px;font-size:14.5px;font-weight:600}
+.range-wrap input{accent-color:var(--accent-strong);width:140px}
+.range-wrap output{min-width:34px;font-family:var(--serif);font-size:18px}
+.more-filters{display:none;gap:18px;flex-direction:column;border-top:1px dashed var(--border);padding-top:16px}
+.more-filters.open{display:flex}
+.fgroup h3{font-family:var(--sans);font-size:14px;font-weight:700;margin-bottom:10px;color:var(--text-muted)}
+.fgroup-head{display:flex;align-items:center;gap:12px;margin-bottom:10px;flex-wrap:wrap}
+.fgroup-head h3{margin:0}
+.seg.small button{padding:5px 12px;min-height:34px;font-size:13.5px}
+.result-line{margin:24px 0 18px;font-weight:600;color:var(--text-muted)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 22px}
+@media (max-width:1279px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:1023px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:599px){.grid{grid-template-columns:1fr}.card .poster{aspect-ratio:16/10}.card .poster .badge-era{bottom:16px;right:auto;left:50%;transform:translateX(-50%)}}
+.card{display:flex;flex-direction:column;gap:12px;cursor:pointer}
+.card .poster{transition:transform .25s,box-shadow .25s;box-shadow:var(--shadow)}
+.card:hover .poster{transform:translateY(-4px);box-shadow:var(--shadow-lift)}
+.card-info{display:flex;flex-direction:column;gap:8px;flex:1}
+.card-orig{font-size:13px;color:var(--text-muted);margin-top:-4px}
+.meta{display:flex;flex-wrap:wrap;gap:2px 12px;font-size:13.5px;color:var(--text-muted)}
+.ratings{display:flex;gap:16px;font-size:14px;align-items:baseline;flex-wrap:wrap}
+.ratings b{font-family:var(--serif);font-size:19px}
+.star{color:var(--gold)}
+.clamp{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;font-size:15px}
+.card .btn{align-self:flex-start;margin-top:auto}
+.empty{text-align:center;padding:48px 20px;border:1.5px dashed var(--border);border-radius:var(--r-card)}
+.empty svg{width:120px;height:auto;color:var(--text-muted);margin-bottom:12px}
+.empty p{color:var(--text-muted);margin:6px auto 18px;max-width:40ch}
+
+/* Collections */
+.shelf{margin-bottom:40px}
+.shelf h3{margin-bottom:6px}
+.shelf > p{color:var(--text-muted);font-size:15px;margin-bottom:14px}
+.shelf .strip{grid-auto-columns:minmax(150px,170px)}
+.mini{border:0;background:none;padding:0;text-align:left;display:flex;flex-direction:column;gap:8px}
+.mini span.t{font-weight:600;font-size:14.5px;line-height:1.3}
+.mini:hover .poster{transform:translateY(-3px)}
+.mini .poster{transition:transform .2s}
+
+/* Stats */
+.stats-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px}
+.panel{min-width:0}
+@media (max-width:899px){.stats-grid{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-card);padding:24px}
+.panel h3{margin-bottom:6px}
+.panel > p.sub{color:var(--text-muted);font-size:14.5px;margin-bottom:18px}
+.donut-wrap{display:grid;grid-template-columns:220px 1fr;gap:24px;align-items:center}
+@media (max-width:520px){.donut-wrap{grid-template-columns:1fr;justify-items:center}}
+.donut circle.seg-c{cursor:pointer;transition:stroke-width .2s}
+.donut circle.seg-c:hover,.donut circle.seg-c:focus{stroke-width:30;outline:none}
+.legend{list-style:none;margin:0;padding:0;display:grid;gap:4px;width:100%}
+.legend button{width:100%;display:flex;align-items:center;gap:10px;border:0;background:none;padding:6px 8px;border-radius:8px;font-size:14.5px;text-align:left}
+.legend button:hover{background:var(--surface-alt)}
+.legend .dot{width:12px;height:12px;border-radius:4px;flex:none}
+.legend .cnt{margin-left:auto;font-weight:700}
+.bars{display:grid;gap:12px}
+.bar-row{display:grid;grid-template-columns:120px 1fr 28px;align-items:center;gap:12px;font-size:14.5px;border:0;background:none;padding:4px;border-radius:8px;text-align:left}
+.bar-row:hover{background:var(--surface-alt)}
+.bar-track{height:14px;background:var(--surface-alt);border-radius:999px;overflow:hidden}
+.bar-fill{height:100%;border-radius:999px}
+.origin-bar{display:flex;height:44px;border-radius:12px;overflow:hidden;margin-top:6px}
+.origin-bar button{border:0;color:#FBF4EA;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;padding:0 10px;white-space:nowrap}
+.timeline{position:relative;margin-top:12px;overflow-x:auto;padding-bottom:8px}
+.tl-inner{position:relative;min-width:720px;height:230px}
+.tl-axis{position:absolute;left:0;right:0;bottom:72px;height:2px;background:var(--border)}
+.tl-era{position:absolute;bottom:0;height:40px;border-left:1px solid var(--border);font-size:12px;color:var(--text-muted);padding:4px 8px;line-height:1.25}
+.tl-dec{position:absolute;bottom:48px;font-size:11.5px;color:var(--text-muted);transform:translateX(-50%)}
+.tl-dot{position:absolute;width:18px;height:18px;border-radius:50%;border:3px solid var(--surface);transform:translate(-50%,50%);padding:0;box-shadow:0 0 0 1px var(--border)}
+.tl-dot:hover,.tl-dot:focus-visible{transform:translate(-50%,50%) scale(1.25);z-index:3}
+.tl-dot::after{content:attr(data-tip);position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);background:var(--text);color:var(--bg);padding:6px 10px;border-radius:8px;font-size:12.5px;font-weight:600;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s}
+.tl-dot:hover::after,.tl-dot:focus-visible::after{opacity:1}
+.tl-legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13.5px;color:var(--text-muted);margin-top:8px}
+.tl-legend span{display:inline-flex;align-items:center;gap:6px}
+.tl-legend i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.full{grid-column:1/-1}
+
+/* Reviews */
+.reviews-layout{display:grid;grid-template-columns:1.6fr 1fr;gap:28px;align-items:start}
+@media (max-width:999px){.reviews-layout{grid-template-columns:1fr}}
+.feed{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media (max-width:640px){.feed{grid-template-columns:1fr}}
+.review{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-card);padding:18px;display:flex;flex-direction:column;gap:10px}
+.review-head{display:flex;align-items:center;gap:12px}
+.avatar{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:#FBF4EA;font-weight:700;font-size:15px;flex:none}
+.review-head .who{display:flex;flex-direction:column;line-height:1.3}
+.review-head .who b{font-size:15px}
+.review-head .who small{color:var(--text-muted);font-size:12.5px}
+.review-score{margin-left:auto;font-family:var(--serif);font-weight:700;font-size:18px;white-space:nowrap}
+.review-proj{border:0;background:none;padding:0;font-weight:600;font-size:14px;color:var(--accent-strong);text-align:left;text-decoration:underline;text-underline-offset:3px}
+:root[data-theme="dark"] .review-proj{color:var(--accent)}
+.review-text{font-size:15px}
+.review-text.blurred{filter:blur(6px);user-select:none;cursor:pointer}
+.review-foot{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.helpful{border:1px solid var(--border);background:transparent;border-radius:999px;padding:4px 12px;font-size:13px;min-height:34px}
+.helpful[aria-pressed="true"]{background:var(--surface-alt);border-color:var(--gold)}
+.link-btn{border:0;background:none;padding:4px;color:var(--text-muted);font-size:13px;text-decoration:underline}
+.spoiler-tag{font-size:12px;font-weight:700;color:var(--wine)}
+:root[data-theme="dark"] .spoiler-tag{color:#E59AA6}
+
+/* Form */
+.form-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-card);padding:22px;box-shadow:var(--shadow)}
+.form-card h3{margin-bottom:4px}
+.form-card > p{color:var(--text-muted);font-size:14.5px;margin-bottom:16px}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.field label,.field legend{font-weight:600;font-size:14.5px}
+.field input[type=text],.field input[type=email],.field select,.field textarea{border:1px solid var(--border);background:var(--bg);border-radius:var(--r-field);padding:11px 14px;width:100%}
+.field textarea{min-height:120px;resize:vertical}
+.field .hint{display:flex;justify-content:space-between;font-size:12.5px;color:var(--text-muted)}
+.field .err{color:#B3261E;font-size:13.5px;font-weight:600;min-height:0}
+:root[data-theme="dark"] .field .err{color:#F2A49A}
+.field.invalid input,.field.invalid textarea,.field.invalid select{border-color:#B3261E}
+fieldset.field{border:0;padding:0;margin:0 0 14px}
+.stars{display:flex;flex-wrap:wrap;gap:2px}
+.stars input{position:absolute;opacity:0;width:1px;height:1px}
+.stars label{font-size:25px;line-height:1;color:var(--border);cursor:pointer;padding:2px;transition:color .1s, transform .1s}
+.stars label.on{color:var(--gold)}
+.stars input:focus-visible + label{outline:2px solid var(--gold);border-radius:4px}
+.stars-val{font-size:13.5px;color:var(--text-muted);margin-left:8px;align-self:center}
+.check{display:flex;gap:10px;align-items:center;font-size:14.5px;margin-bottom:16px}
+.check input{width:20px;height:20px;accent-color:var(--accent-strong)}
+.form-actions{display:flex;gap:10px;flex-wrap:wrap}
+
+/* Subscribe */
+.subscribe{background:var(--wine);color:var(--on-dark);position:relative;overflow:hidden}
+.subscribe-in{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
+@media (max-width:860px){.subscribe-in{grid-template-columns:1fr}}
+.subscribe p{color:rgba(251,244,234,.86);margin-top:12px;max-width:46ch}
+.sub-form{display:flex;gap:10px;flex-wrap:wrap}
+.sub-form input{flex:1 1 220px;height:50px;border-radius:999px;border:1.5px solid rgba(251,244,234,.4);background:rgba(251,244,234,.08);color:var(--on-dark);padding:0 20px}
+.sub-form input::placeholder{color:rgba(251,244,234,.6)}
+.sub-err{color:#FFD9C9;font-size:14px;font-weight:600;margin-top:8px;min-height:1.4em}
+
+/* Footer */
+footer{background:#3B1820;color:rgba(251,244,234,.85);padding:48px 0 calc(32px + env(safe-area-inset-bottom,0px))}
+.foot-in{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:28px}
+@media (max-width:760px){.foot-in{grid-template-columns:1fr}}
+footer .logo{color:var(--on-dark)}
+footer a{color:rgba(251,244,234,.85);text-decoration:none}
+footer a:hover{color:#fff;text-decoration:underline}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+footer h3{font-family:var(--sans);font-size:15px;font-weight:700;color:#fff;margin-bottom:10px}
+.socials{display:flex;gap:10px;margin-top:14px}
+.socials a{width:42px;height:42px;border-radius:50%;border:1px solid rgba(251,244,234,.3);display:grid;place-items:center}
+.socials svg{width:18px;height:18px}
+.foot-note{margin-top:32px;padding-top:18px;border-top:1px solid rgba(251,244,234,.15);font-size:13.5px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+
+/* Modal */
+.overlay{position:fixed;inset:0;z-index:80;background:rgba(30,12,14,.55);backdrop-filter:blur(3px);display:flex;align-items:flex-start;justify-content:center;padding:calc(env(safe-area-inset-top,0px) + 24px) 16px calc(env(safe-area-inset-bottom,0px) + 24px);overflow-y:auto;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+.overlay.open{opacity:1;visibility:visible}
+.modal{position:relative;width:min(100%,920px);background:var(--bg);border-radius:22px;box-shadow:0 40px 80px rgba(0,0,0,.35);transform:translateY(20px);transition:transform .3s;margin:auto 0}
+.overlay.open .modal{transform:none}
+.modal-close{position:absolute;top:14px;right:14px;z-index:2}
+.m-top{display:grid;grid-template-columns:220px 1fr;gap:28px;padding:28px;background:var(--surface-alt);border-radius:22px 22px 0 0}
+@media (max-width:640px){.m-top{grid-template-columns:1fr;padding:20px}.m-top .poster{max-width:200px}}
+.m-top h2{font-size:clamp(28px,2.4vw + 14px,40px);padding-right:44px}
+.m-top .orig{color:var(--text-muted);margin-top:4px}
+.m-top .meta{margin-top:12px;font-size:14.5px}
+.m-top .chips{margin-top:12px}
+.m-awards{margin-top:14px;font-size:14.5px;display:flex;gap:8px;align-items:flex-start}
+.m-body{padding:28px;display:grid;gap:28px}
+@media (max-width:640px){.m-body{padding:20px}}
+.m-scores{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:640px){.m-scores{grid-template-columns:1fr}}
+.score-box{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:18px}
+.score-box .lbl{font-size:13.5px;font-weight:700;color:var(--text-muted)}
+.score-big{font-family:var(--serif);font-size:44px;font-weight:700;line-height:1.1}
+.score-big small{font-size:18px;color:var(--text-muted)}
+.score-box .v{font-family:var(--serif);font-style:italic;font-size:16.5px;margin-top:4px}
+.hist{display:flex;align-items:flex-end;gap:4px;height:56px;margin-top:10px}
+.hist div{flex:1;background:var(--gold);border-radius:3px 3px 0 0;min-height:3px;position:relative}
+.hist-l{display:flex;gap:4px;font-size:11px;color:var(--text-muted)}
+.hist-l span{flex:1;text-align:center}
+.m-sec h3{margin-bottom:10px}
+.spoiler{position:relative;background:var(--wine);color:var(--on-dark);border-radius:16px;padding:20px 22px;overflow:hidden}
+.spoiler h3{color:#fff}
+.spoiler .sp-text{transition:filter .35s}
+.spoiler.locked .sp-text{filter:blur(6px);user-select:none}
+.spoiler-gate{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:rgba(60,20,28,.35);text-align:center;padding:16px}
+.spoiler:not(.locked) .spoiler-gate{display:none}
+.spoiler-gate b{font-family:var(--serif);font-size:20px}
+.highlight{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--sage);border-radius:12px;padding:18px 20px}
+.why{margin:0;padding-left:20px;display:grid;gap:6px}
+.m-actions{display:flex;flex-wrap:wrap;gap:10px}
+.m-reviews{display:grid;gap:14px}
+.similar{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:560px){.similar{grid-template-columns:repeat(2,1fr)}}
+
+/* Drawer */
+.drawer{position:fixed;top:0;right:0;bottom:0;z-index:90;width:min(100%,400px);background:var(--bg);box-shadow:-20px 0 50px rgba(0,0,0,.2);transform:translateX(100%);transition:transform .3s;display:flex;flex-direction:column;padding:calc(env(safe-area-inset-top,0px) + 20px) 20px calc(env(safe-area-inset-bottom,0px) + 20px);visibility:hidden}
+.drawer.open{transform:none;visibility:visible}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.drawer-list{list-style:none;margin:0;padding:0;display:grid;gap:12px;overflow-y:auto}
+.drawer-item{display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:10px}
+.drawer-item .poster{padding:6px;border-radius:8px}
+.drawer-item .poster::before,.drawer-item .poster > *{display:none}
+.drawer-item button.open-it{border:0;background:none;padding:0;text-align:left;font-weight:600}
+.drawer-item small{display:block;color:var(--text-muted);font-weight:500}
+.scrim{position:fixed;inset:0;z-index:85;background:rgba(30,12,14,.4);opacity:0;visibility:hidden;transition:opacity .25s}
+.scrim.open{opacity:1;visibility:visible}
+
+/* Toast & top */
+.toasts{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 20px);transform:translateX(-50%);z-index:100;display:grid;gap:8px;width:max-content;max-width:calc(100% - 32px)}
+.toast{background:var(--text);color:var(--bg);padding:12px 20px;border-radius:999px;font-weight:600;font-size:15px;box-shadow:0 10px 30px rgba(0,0,0,.25);animation:rise .3s both}
+.to-top{position:fixed;right:20px;bottom:calc(env(safe-area-inset-bottom,0px) + 20px);z-index:40;opacity:0;visibility:hidden;transition:opacity .25s}
+.to-top.show{opacity:1;visibility:visible}
+</style>
+</head>
+<body>
+<a class="sr-only" href="#catalog">Перейти к каталогу</a>
+
+<header class="site-header" id="top">
+  <div class="wrap header-in">
+    <a class="logo" href="#home" aria-label="Плёнка и плед, на главную">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="27" r="17" fill="#7A2E3A"/><circle cx="24" cy="27" r="5" fill="#FBF4EA"/><circle cx="24" cy="17" r="3.4" fill="#F3E6D3"/><circle cx="24" cy="37" r="3.4" fill="#F3E6D3"/><circle cx="14" cy="27" r="3.4" fill="#F3E6D3"/><circle cx="34" cy="27" r="3.4" fill="#F3E6D3"/><path d="M19 8c0-3 3-3 3-6M26 9c0-3 3-3 3-6" stroke="#D9A441" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>
+      <span>Плёнка и плед</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <button class="icon-btn nav-close" id="navClose" aria-label="Закрыть меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      <a href="#premieres">Премьеры</a>
+      <a href="#catalog">Каталог</a>
+      <a href="#collections">Подборки</a>
+      <a href="#stats">Статистика</a>
+      <a href="#reviews">Отзывы</a>
+    </nav>
+    <div class="header-actions">
+      <div class="search-box" id="searchBox">
+        <label for="searchInput" class="sr-only">Поиск по названию</label>
+        <input id="searchInput" type="search" placeholder="Название фильма…" autocomplete="off">
+        <button class="icon-btn" id="searchToggle" aria-label="Поиск" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
+      </div>
+      <button class="icon-btn" id="favOpen" aria-label="Избранное"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><span class="badge-count" id="favCount"></span></button>
+      <button class="icon-btn" id="themeToggle" aria-label="Переключить тему"></button>
+      <button class="icon-btn burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home" aria-labelledby="heroTitle">
+  <div class="perf top" aria-hidden="true"></div>
+  <div class="wrap hero-in">
+    <div class="hero-anim">
+      <h1 id="heroTitle">Кино, о котором хочется говорить</h1>
+      <p class="hero-lead">Сюжеты без лишних спойлеров (и со спойлерами, если очень хочется), премьеры российского и мирового кино, честные оценки и тёплые отзывы зрителей.</p>
+      <div class="hero-cta">
+        <a class="btn btn-light" href="#catalog">Найти, что посмотреть</a>
+        <a class="btn btn-outline-light" href="#premieres">Ближайшие премьеры</a>
+      </div>
+      <p class="hero-facts" id="heroFacts"></p>
+    </div>
+    <article class="ticket" id="tip" aria-live="polite"></article>
+  </div>
+  <div class="perf bottom" aria-hidden="true"></div>
+</section>
+
+<section id="premieres" aria-labelledby="premTitle">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2 id="premTitle">Премьеры</h2>
+        <p>Что скоро выйдет в кинотеатрах и на онлайн-площадках. Нажмите «Напомнить», и премьера появится в вашем избранном.</p>
+      </div>
+      <div class="seg" id="premTabs" role="group" aria-label="Регион премьер">
+        <button aria-pressed="true" data-region="all">Все</button>
+        <button aria-pressed="false" data-region="ru">Российские</button>
+        <button aria-pressed="false" data-region="world">Мировые</button>
+      </div>
+    </div>
+    <div class="strip" id="premStrip"></div>
+  </div>
+</section>
+
+<section id="catalog" class="alt" aria-labelledby="catTitle">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2 id="catTitle">Каталог</h2>
+        <p>Не знаете, что включить сегодня? Давайте выберем вместе: по настроению, стране или эпохе.</p>
+      </div>
+    </div>
+    <div class="filters" id="filters">
+      <div class="filters-row">
+        <div class="seg" id="typeTabs" role="group" aria-label="Тип контента"></div>
+      </div>
+      <div class="filters-row">
+        <div class="seg small" id="originSeg" role="group" aria-label="Происхождение">
+          <button aria-pressed="true" data-origin="all">Всё кино</button>
+          <button aria-pressed="false" data-origin="ru">Наше кино</button>
+          <button aria-pressed="false" data-origin="world">Мировое кино</button>
+        </div>
+        <div class="range-wrap">
+          <label for="minRating">Оценка от</label>
+          <input id="minRating" type="range" min="0" max="10" step="0.5" value="0">
+          <output id="minRatingOut" for="minRating">0</output>
+        </div>
+        <label class="field-inline">Сортировка
+          <select id="sortSel">
+            <option value="rating">По оценке</option>
+            <option value="year-desc">Сначала новые</option>
+            <option value="year-asc">Сначала старые</option>
+            <option value="title">По названию</option>
+            <option value="reviews">По числу отзывов</option>
+          </select>
+        </label>
+        <span class="spacer"></span>
+        <button class="btn btn-ghost btn-sm" id="moreToggle" aria-expanded="false" aria-controls="moreFilters">Жанр, страна, эпоха</button>
+        <button class="btn btn-ghost btn-sm" id="resetBtn">Сбросить фильтры</button>
+      </div>
+      <div class="more-filters" id="moreFilters">
+        <div class="fgroup"><h3>Жанр</h3><div class="chips" id="genreChips"></div></div>
+        <div class="fgroup"><h3>Страна</h3><div class="chips" id="countryChips"></div></div>
+        <div class="fgroup">
+          <div class="fgroup-head"><h3>Период</h3>
+            <div class="seg small" id="periodMode" role="group" aria-label="Режим периода">
+              <button aria-pressed="true" data-mode="era">Эпохи</button>
+              <button aria-pressed="false" data-mode="decade">Десятилетия</button>
+            </div>
+          </div>
+          <div class="chips" id="periodChips"></div>
+        </div>
+      </div>
+    </div>
+    <p class="result-line" id="resultLine" aria-live="polite"></p>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section id="collections" aria-labelledby="colTitle">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2 id="colTitle">Подборки</h2>
+        <p>Полки под настроение. Берите с любой.</p>
+      </div>
+    </div>
+    <div id="shelves"></div>
+  </div>
+</section>
+
+<section id="stats" class="alt" aria-labelledby="statTitle">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2 id="statTitle">Жанры и эпохи</h2>
+        <p>Как устроена наша коллекция. Нажмите на жанр, тип, страну или точку на шкале, и каталог отфильтруется.</p>
+      </div>
+    </div>
+    <div class="stats-grid">
+      <div class="panel">
+        <h3>Распределение по жанрам</h3>
+        <p class="sub">По основному жанру каждого проекта</p>
+        <div class="donut-wrap" id="donut"></div>
+      </div>
+      <div class="panel">
+        <h3>По типу контента</h3>
+        <p class="sub">Фильмы, сериалы, документальное, передачи и подкасты</p>
+        <div class="bars" id="typeBars"></div>
+        <h3 style="margin-top:28px">Наше и мировое</h3>
+        <p class="sub" style="margin-bottom:6px">Советское и российское кино рядом с мировым</p>
+        <div class="origin-bar" id="originBar"></div>
+      </div>
+      <div class="panel full">
+        <h3>Периоды создания</h3>
+        <p class="sub">От золотой классики до новинок. Для сериалов и передач отмечен год начала</p>
+        <div class="timeline"><div class="tl-inner" id="timeline"></div></div>
+        <div class="tl-legend" id="tlLegend"></div>
+      </div>
+      <div class="panel full">
+        <h3>Страны</h3>
+        <p class="sub">Сколько проектов из каждой страны</p>
+        <div class="chips" id="countryStats"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" aria-labelledby="revTitle">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2 id="revTitle">Отзывы зрителей</h2>
+        <p>Свежие впечатления наших гостей. Поделитесь своим, нам правда интересно.</p>
+      </div>
+    </div>
+    <div class="reviews-layout">
+      <div class="feed" id="feed"></div>
+      <div id="feedForm"></div>
+    </div>
+  </div>
+</section>
+
+<section class="subscribe" id="subscribe" aria-labelledby="subTitle">
+  <div class="wrap subscribe-in">
+    <div>
+      <h2 id="subTitle">Давайте дружить</h2>
+      <p>Раз в неделю присылаем подборку: одна премьера, одна находка из архива и один подкаст в дорогу.</p>
+    </div>
+    <form id="subForm" novalidate>
+      <div class="sub-form">
+        <label for="subEmail" class="sr-only">Электронная почта</label>
+        <input id="subEmail" type="email" placeholder="Ваша почта" autocomplete="email">
+        <button class="btn btn-light" type="submit">Подписаться</button>
+      </div>
+      <p class="sub-err" id="subErr" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-in">
+      <div>
+        <a class="logo" href="#home"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="27" r="17" fill="#C8553D"/><circle cx="24" cy="27" r="5" fill="#FBF4EA"/><circle cx="24" cy="17" r="3.4" fill="#F3E6D3"/><circle cx="24" cy="37" r="3.4" fill="#F3E6D3"/><circle cx="14" cy="27" r="3.4" fill="#F3E6D3"/><circle cx="34" cy="27" r="3.4" fill="#F3E6D3"/><path d="M19 8c0-3 3-3 3-6M26 9c0-3 3-3 3-6" stroke="#D9A441" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>Плёнка и плед</a>
+        <p style="margin-top:12px">Сделано с любовью к кино и горячему чаю.</p>
+        <div class="socials">
+          <a href="#" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 4.3L2.9 11.5c-1.3.5-1.2 1.2-.2 1.5l4.8 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.4l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.5c.3-1.3-.5-1.8-1.4-1.2zM9 14.2l9.2-5.8c.4-.3.8-.1.5.2l-7.6 6.9-.3 3.2L9 14.2z"/></svg></a>
+          <a href="#" aria-label="ВКонтакте"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.8 18c-6 0-9.4-4.1-9.6-11h3c.1 5 2.4 7.2 4.1 7.6V7h2.9v4.3c1.7-.2 3.5-2.2 4.1-4.3h2.8c-.5 2.7-2.5 4.7-3.9 5.5 1.4.7 3.7 2.4 4.6 5.5h-3.1c-.7-2.1-2.4-3.7-4.5-3.9V18h-.4z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 8.2s-.2-1.5-.8-2.1c-.8-.8-1.7-.8-2.1-.9C16.2 5 12 5 12 5s-4.2 0-7.1.2c-.4.1-1.3.1-2.1.9-.6.6-.8 2.1-.8 2.1S2 9.9 2 11.6v1.6c0 1.7.2 3.4.2 3.4s.2 1.5.8 2.1c.8.8 1.8.8 2.3.9 1.6.2 6.7.2 6.7.2s4.2 0 7.1-.2c.4-.1 1.3-.1 2.1-.9.6-.6.8-2.1.8-2.1s.2-1.7.2-3.4v-1.6c0-1.7-.2-3.4-.2-3.4zM10 15V9l5.2 3L10 15z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h3>Разделы</h3>
+        <ul><li><a href="#premieres">Премьеры</a></li><li><a href="#catalog">Каталог</a></li><li><a href="#collections">Подборки</a></li><li><a href="#stats">Жанры и эпохи</a></li><li><a href="#reviews">Отзывы</a></li></ul>
+      </div>
+      <div>
+        <h3>Каталог по типам</h3>
+        <ul id="footTypes"></ul>
+      </div>
+    </div>
+    <div class="foot-note"><span>Оценки редакции субъективны. Отзывы на сайте демонстрационные.</span><span id="year"></span></div>
+  </div>
+</footer>
+
+<div class="overlay" id="overlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle" id="modal">
+    <button class="icon-btn modal-close" id="modalClose" aria-label="Закрыть"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-labelledby="drawerTitle" role="dialog" aria-modal="true">
+  <div class="drawer-head">
+    <h2 id="drawerTitle" style="font-size:28px">Избранное</h2>
+    <button class="icon-btn" id="drawerClose" aria-label="Закрыть избранное"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <ul class="drawer-list" id="drawerList"></ul>
+</aside>
+
+<button class="icon-btn to-top" id="toTop" aria-label="Наверх"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<script>
+/* ================= ДАННЫЕ ================= */
+const TITLES = [
+{id:"casablanca",type:"film",origin:"world",title:"Касабланка",originalTitle:"Casablanca",year:1942,country:["США"],countryCode:["US"],creator:"Майкл Кёртис",duration:"102 мин",genres:["Мелодрама","Военная драма"],moods:["classic","cozy"],editorRating:9.0,
+ verdict:"Чёрно-белая классика, в которой каждая реплика стала цитатой",awards:"3 «Оскара», включая «Лучший фильм»",
+ synopsis:"Вторая мировая война. Американец Рик держит популярное кафе в марокканской Касабланке, куда стекаются беженцы в надежде уехать в Америку. Однажды в его кафе входит женщина, которую он когда-то любил, — вместе с мужем, лидером Сопротивления.",
+ spoiler:"Рик получает транзитные документы, способные спасти Ильзу и её мужа Виктора Ласло. Несмотря на вспыхнувшие чувства, он отправляет Ильзу улетать вместе с Ласло, а сам застреливает немецкого майора Штрассера. Капитан Рено прикрывает Рика, и они уходят в туман, начиная «прекрасную дружбу».",
+ whyWatch:["Хамфри Богарт и Ингрид Бергман","Песня «As Time Goes By»","Эталон голливудской классики"],coverGradient:["#2B1D16","#8C7462"]},
+{id:"cranes",type:"film",origin:"ru",title:"Летят журавли",originalTitle:"",year:1957,country:["СССР"],countryCode:["SU"],creator:"Михаил Калатозов",duration:"97 мин",genres:["Военная драма","Мелодрама"],moods:["classic","ourcinema","think"],editorRating:9.1,
+ verdict:"Пронзительная история любви, снятая так, что дух захватывает до сих пор",awards:"«Золотая пальмовая ветвь» Каннского кинофестиваля",
+ synopsis:"Москва, июнь 1941 года. Влюблённые Вероника и Борис мечтают о будущем, но начинается война, и Борис уходит добровольцем на фронт. Веронике предстоит пережить бомбёжки, эвакуацию и долгое ожидание.",
+ spoiler:"Потеряв родителей, Вероника выходит замуж за двоюродного брата Бориса Марка и мучается чувством вины. Борис погибает на фронте, но она отказывается верить в это. В финале, в день Победы, Вероника встречает эшелон с вернувшимися солдатами, узнаёт о смерти Бориса и раздаёт цветы незнакомым людям.",
+ whyWatch:["Новаторская операторская работа Сергея Урусевского","Татьяна Самойлова в главной роли","Сцена с кружащимися берёзами"],coverGradient:["#2B1D16","#6E7E58"]},
+{id:"moscow-tears",type:"film",origin:"ru",title:"Москва слезам не верит",originalTitle:"",year:1979,country:["СССР"],countryCode:["SU"],creator:"Владимир Меньшов",duration:"150 мин",genres:["Мелодрама","Драма"],moods:["cozy","classic","ourcinema"],editorRating:8.8,
+ verdict:"Классика, которая со временем становится только теплее",awards:"«Оскар» за лучший фильм на иностранном языке",
+ synopsis:"Три подруги приезжают в Москву конца 1950-х в поисках счастья. Двадцать лет спустя мы узнаём, как сложились их судьбы и что такое настоящее счастье.",
+ spoiler:"Катерина, оставшись одна с маленькой дочерью после предательства Рудольфа, упорно учится и становится директором крупного комбината. В электричке она знакомится со слесарем Гошей; узнав о её высокой должности, он исчезает, но Катерина его находит, и в финале они остаются вместе.",
+ whyWatch:["Живые узнаваемые герои","Москва двух эпох","Фразы, разошедшиеся на цитаты"],coverGradient:["#7A2E3A","#D9A441"]},
+{id:"brat",type:"film",origin:"ru",title:"Брат",originalTitle:"",year:1997,country:["Россия"],countryCode:["RU"],creator:"Алексей Балабанов",duration:"100 мин",genres:["Криминал","Драма"],moods:["think","ourcinema"],editorRating:8.5,
+ verdict:"Портрет эпохи 90-х и её самого противоречивого героя",awards:"",
+ synopsis:"Демобилизованный Данила Багров приезжает в Петербург к старшему брату, который, по словам матери, «большой человек». Город оказывается совсем не таким, каким его представлял Данила.",
+ spoiler:"Старший брат работает наёмным убийцей и втягивает Данилу в свои дела, а затем, спасая себя, сдаёт его бандитам. Данила выживает, прощает брата и в финале уезжает в Москву.",
+ whyWatch:["Культовый саундтрек группы «Наутилус Помпилиус»","Фактура Петербурга 90-х","Повод для споров о героях времени"],coverGradient:["#2B1D16","#7A6656"]},
+{id:"life-beautiful",type:"film",origin:"world",title:"Жизнь прекрасна",originalTitle:"La vita è bella",year:1997,country:["Италия"],countryCode:["IT"],creator:"Роберто Бениньи",duration:"116 мин",genres:["Драма","Комедия"],moods:["think","world"],editorRating:9.0,
+ verdict:"Самая светлая история о самом тёмном времени",awards:"3 «Оскара» и Гран-при Каннского фестиваля",
+ synopsis:"Обаятельный Гвидо добивается любви Доры и открывает книжный магазин. Но приходит война, и семью отправляют в концлагерь, где Гвидо убеждает маленького сына, что всё происходящее — большая игра.",
+ spoiler:"Гвидо до последнего поддерживает игру, обещая сыну танк в награду за победу. Перед освобождением лагеря его расстреливают, но мальчик, спрятанный отцом, выживает, встречает американский танк и воссоединяется с мамой.",
+ whyWatch:["Сочетание юмора и трагедии","Актёрская работа Бениньи","Разговор о силе родительской любви"],coverGradient:["#7A2E3A","#C9A98A"]},
+{id:"amelie",type:"film",origin:"world",title:"Амели",originalTitle:"Le Fabuleux Destin d'Amélie Poulain",year:2001,country:["Франция"],countryCode:["FR"],creator:"Жан-Пьер Жёне",duration:"122 мин",genres:["Комедия","Мелодрама"],moods:["cozy","world"],editorRating:8.7,
+ verdict:"Тёплая сказка о маленьких чудесах, которые мы делаем для других",awards:"",
+ synopsis:"Застенчивая официантка с Монмартра однажды решает тайно менять жизни окружающих к лучшему. А вот устроить собственное счастье оказывается куда труднее.",
+ spoiler:"Амели находит в своей квартире тайник с детскими сокровищами бывшего жильца и анонимно возвращает его владельцу, а потом увлекается добрыми «диверсиями» по отношению к соседям. Влюбившись в коллекционера выброшенных фотографий Нино, она долго прячется за загадками и играми, пока наконец не решается открыть ему дверь.",
+ whyWatch:["Узнаваемая зелёно-красная палитра","Музыка Яна Тьерсена","Заряд нежности на всю неделю"],coverGradient:["#2F5D3A","#C8553D"]},
+{id:"spirited-away",type:"film",origin:"world",title:"Унесённые призраками",originalTitle:"千と千尋の神隠し",year:2001,country:["Япония"],countryCode:["JP"],creator:"Хаяо Миядзаки",duration:"125 мин",genres:["Анимация","Фэнтези"],moods:["cozy","world"],editorRating:9.3,
+ verdict:"Сказка, которую пересматривают и в 10, и в 40 лет",awards:"«Оскар» за лучший анимационный фильм, «Золотой медведь» Берлинале",
+ synopsis:"Десятилетняя Тихиро с родителями случайно попадает в мир духов. Чтобы спасти семью, ей придётся устроиться на работу в волшебную баню колдуньи Юбабы и не забыть собственное имя.",
+ spoiler:"Родители Тихиро, объевшись угощений духов, превращаются в свиней. Таинственный мальчик Хаку оказывается духом реки, в которую девочка когда-то упала в детстве; вспомнив его настоящее имя, Тихиро освобождает его от власти Юбабы. В финале она проходит последнее испытание, верно сказав, что среди свиней нет её родителей, и возвращается домой вместе с семьёй.",
+ whyWatch:["Ручная анимация студии Ghibli","Мудрая история взросления","Музыка Дзё Хисаиси"],coverGradient:["#C8553D","#D9A441"]},
+{id:"three-idiots",type:"film",origin:"world",title:"Три идиота",originalTitle:"3 Idiots",year:2009,country:["Индия"],countryCode:["IN"],creator:"Раджкумар Хирани",duration:"170 мин",genres:["Комедия","Драма"],moods:["cozy","world"],editorRating:8.6,
+ verdict:"Смешно до слёз и мудро без занудства",awards:"",
+ synopsis:"Двое друзей отправляются на поиски однокурсника Ранчо, который бесследно исчез после выпуска, и вспоминают годы в престижном инженерном колледже, где он учил их думать, а не зубрить.",
+ spoiler:"Оказывается, Ранчо учился под чужим именем: он был сыном садовника, получавшим образование вместо богатого наследника. Его настоящее имя — Пхунсук Вангду, теперь он знаменитый изобретатель и директор школы в Ладакхе.",
+ whyWatch:["Песни и танцы, которые не мешают, а помогают","Тема давления на студентов","Финал, который хочется пересматривать"],coverGradient:["#D9A441","#C8553D"]},
+{id:"leviathan",type:"film",origin:"ru",title:"Левиафан",originalTitle:"",year:2014,country:["Россия"],countryCode:["RU"],creator:"Андрей Звягинцев",duration:"140 мин",genres:["Драма"],moods:["ourcinema","think"],editorRating:8.4,
+ verdict:"Суровая и красивая притча о человеке против системы",awards:"Приз за сценарий в Каннах, «Золотой глобус»",
+ synopsis:"Автомеханик Николай живёт с женой и сыном в доме на берегу Баренцева моря. Мэр городка хочет отобрать у него участок, и Николай зовёт на помощь старого армейского друга — московского адвоката.",
+ spoiler:"Адвокат Дмитрий находит компромат на мэра, но тот запугивает его, и Дмитрий уезжает. Жена Николая Лиля, изменившая мужу с Дмитрием, вскоре погибает; Николая обвиняют в её убийстве и приговаривают к 15 годам. Его дом сносят, а на этом месте строят церковь.",
+ whyWatch:["Северные пейзажи","Сильный актёрский ансамбль во главе с Алексеем Серебряковым","Повод для долгого разговора"],coverGradient:["#2F4A5A","#7A6656"]},
+{id:"parasite",type:"film",origin:"world",title:"Паразиты",originalTitle:"기생충 (Parasite)",year:2019,country:["Южная Корея"],countryCode:["KR"],creator:"Пон Джун Хо",duration:"132 мин",genres:["Триллер","Драма","Чёрная комедия"],moods:["think","world"],editorRating:9.2,
+ verdict:"Острая социальная притча, от которой невозможно оторваться",awards:"«Золотая пальмовая ветвь», 4 «Оскара»",
+ synopsis:"Бедная семья Ким ютится в полуподвале и перебивается случайными заработками. Когда сыну предлагают место репетитора в богатом доме семьи Пак, у Кимов появляется план, как по одному устроиться к ним на работу.",
+ spoiler:"В потайном бункере под домом Паков годами живёт муж уволенной экономки. Столкновение двух «подвальных» семей заканчивается кровавой развязкой на детском празднике: отец Кимов убивает господина Пака и сам скрывается в том же бункере, а сын мечтает когда-нибудь купить этот дом.",
+ whyWatch:["Резкие смены жанра","Архитектура дома как метафора социальной лестницы","Первый неанглоязычный фильм с «Оскаром» за лучший фильм"],coverGradient:["#3B2F2A","#C8553D"]},
+{id:"liquidation",type:"series",origin:"ru",title:"Ликвидация",originalTitle:"",year:2007,yearEnd:2007,country:["Россия"],countryCode:["RU"],creator:"Сергей Урсуляк",duration:"14 серий",genres:["Детектив","Криминал"],moods:["ourcinema","binge"],editorRating:8.9,
+ verdict:"Одесса, юмор, погони и Гоцман — сериал, который пересматривают целыми семьями",awards:"",
+ synopsis:"Одесса, 1946 год. Начальник угрозыска Давид Гоцман борется с бандой, которая грабит армейские склады, а за ней стоит загадочный организатор по прозвищу «Академик».",
+ spoiler:"Друг Гоцмана, карманник Фима, погибает, помогая расследованию. «Академиком» оказывается подполковник Кречетов, сотрудник штаба округа, готовивший вооружённый мятеж. Гоцман разоблачает его и отправляет под суд.",
+ whyWatch:["Владимир Машков в роли Гоцмана","Колоритный одесский говор","Атмосфера послевоенного города"],coverGradient:["#C8553D","#2F4A5A"]},
+{id:"dark",type:"series",origin:"world",title:"Тьма",originalTitle:"Dark",year:2017,yearEnd:2020,country:["Германия"],countryCode:["DE"],creator:"Баран бо Одар, Янтье Фризе",duration:"3 сезона",genres:["Фантастика","Триллер"],moods:["think","binge","world"],editorRating:9.0,
+ verdict:"Самая изящная головоломка о времени в истории сериалов",awards:"",
+ synopsis:"В маленьком немецком городке Винден пропадают дети. Расследование связывает четыре семьи и раскрывает тайну, которая повторяется каждые 33 года.",
+ spoiler:"Пещеры под Винденом скрывают проход во времени, а события замкнуты в петлю. Выясняется, что существует два мира, порождённых экспериментом часовщика Тэнхауса, который пытался вернуть погибшую в аварии семью. Йонас и Марта предотвращают эту аварию в изначальном мире, и оба мира вместе со всеми их петлями исчезают.",
+ whyWatch:["Идеальная выстроенность трёх сезонов","Атмосфера и музыка","Повод завести схему родства на листе бумаги"],coverGradient:["#1E1512","#7A2E3A"]},
+{id:"breaking-bad",type:"series",origin:"world",title:"Во все тяжкие",originalTitle:"Breaking Bad",year:2008,yearEnd:2013,country:["США"],countryCode:["US"],creator:"Винс Гиллиган",duration:"5 сезонов",genres:["Криминал","Драма"],moods:["binge"],editorRating:9.5,
+ verdict:"Эталон превращения героя в антигероя",awards:"Многочисленные премии «Эмми»",
+ synopsis:"Скромный школьный учитель химии Уолтер Уайт узнаёт о неизлечимом раке. Чтобы обеспечить семью, он вместе с бывшим учеником Джесси начинает варить метамфетамин.",
+ spoiler:"Уолтер постепенно превращается в безжалостного наркобарона по прозвищу Хайзенберг, разрушая отношения с семьёй. Его шурин из DEA Хэнк выходит на его след и погибает. В финале Уолтер освобождает Джесси из плена банды и умирает в метамфетаминовой лаборатории.",
+ whyWatch:["Брайан Крэнстон","Сценарий без провисаний","Жёлтая палитра Альбукерке"],coverGradient:["#C9922F","#6E7E58"]},
+{id:"planet-earth-2",type:"documentary",origin:"world",title:"Планета Земля II",originalTitle:"Planet Earth II",year:2016,country:["Великобритания"],countryCode:["GB"],creator:"BBC, ведущий Дэвид Аттенборо",duration:"6 эпизодов",genres:["Природа"],moods:["inspire","cozy"],editorRating:9.4,
+ verdict:"Природа так, как вы её никогда не видели",awards:"",
+ synopsis:"Продолжение легендарного цикла BBC с закадровым голосом Дэвида Аттенборо: острова, горы, джунгли, пустыни, луга и города глазами их обитателей.",
+ highlightsTitle:"Главные сцены",
+ highlights:"Погоня змей за новорождёнными морскими игуанами; ночная охота леопардов в индийском городе; кадры, снятые новыми стабилизированными камерами и дронами.",
+ whyWatch:["Операторская работа","Музыка Ханса Циммера","Заряд восхищения миром"],coverGradient:["#6E7E58","#D9A441"]},
+{id:"octopus",type:"documentary",origin:"world",title:"Мой учитель — осьминог",originalTitle:"My Octopus Teacher",year:2020,country:["ЮАР"],countryCode:["ZA"],creator:"Пиппа Эрлих, Джеймс Рид",duration:"85 мин",genres:["Природа"],moods:["inspire","world"],editorRating:8.6,
+ verdict:"Тихая история дружбы, которая меняет взгляд на мир",awards:"«Оскар» за лучший документальный фильм",
+ synopsis:"Режиссёр Крейг Фостер, переживающий выгорание, каждый день ныряет в холодный ламинариевый лес у мыса Доброй Надежды и знакомится с любопытным осьминогом.",
+ spoiler:"Почти год Крейг наблюдает за жизнью осьминога: её охоту, спасение от акул, восстановление после ранения. После откладывания яиц самка осьминога, как и положено её виду, умирает, а Крейг возвращается к жизни, чувствуя себя частью природы.",
+ whyWatch:["Подводные съёмки","Трогательная связь человека и животного","Бережный разговор о восстановлении"],coverGradient:["#2F5D5A","#8A9A6B"]},
+{id:"kinopanorama",type:"tvshow",origin:"ru",title:"Кинопанорама",originalTitle:"",year:1962,ongoing:true,country:["СССР","Россия"],countryCode:["SU","RU"],creator:"Центральное телевидение",duration:"Телепередача",genres:["О кино"],moods:["tv","ourcinema","classic"],editorRating:8.5,
+ verdict:"Телепередача, по которой несколько поколений узнавали новости кино",awards:"",
+ synopsis:"Одна из старейших телепередач о кино: премьеры, съёмочные площадки, интервью с режиссёрами и актёрами советского и зарубежного кино. В разные годы её вели известные кинематографисты, среди которых Алексей Каплер и Эльдар Рязанов.",
+ highlightsTitle:"Что смотреть",
+ highlights:"Выпуски с ведущими-режиссёрами; архивные интервью звёзд советского кино; репортажи со съёмок известных фильмов.",
+ whyWatch:["Живая история кино из первых уст","Атмосфера телевидения прошлых лет","Находки для любителей киноархивов"],coverGradient:["#B07A4F","#7A2E3A"]},
+{id:"animal-world",type:"tvshow",origin:"ru",title:"В мире животных",originalTitle:"",year:1968,ongoing:true,country:["СССР","Россия"],countryCode:["SU","RU"],creator:"Александр Згуриди, Николай Дроздов",duration:"Телепередача",genres:["Природа","Познавательное"],moods:["tv","ourcinema","inspire","cozy"],editorRating:8.8,
+ verdict:"Самая уютная передача о природе, знакомая с детства",awards:"",
+ synopsis:"Познавательная программа о жизни животных со всего мира. Первым ведущим был кинорежиссёр-анималист Александр Згуриди, а с 1977 года передачу ведёт Николай Дроздов, чья любовь к животным стала её визитной карточкой.",
+ highlightsTitle:"Что смотреть",
+ highlights:"Выпуски с экспедиций в разные уголки планеты; знаменитые встречи Николая Дроздова со змеями и другими необычными гостями студии.",
+ whyWatch:["Тёплая интонация ведущего","Добрый юмор","Идеально для семейного просмотра"],coverGradient:["#B07A4F","#6E7E58"]},
+{id:"serial",type:"podcast",origin:"world",title:"Serial (сезон 1)",originalTitle:"Serial",year:2014,country:["США"],countryCode:["US"],creator:"Сара Кениг",duration:"12 выпусков",genres:["True crime"],moods:["think"],editorRating:8.4,
+ verdict:"Подкаст, который сделал жанр true crime массовым",awards:"",
+ synopsis:"Журналистка Сара Кениг выпуск за выпуском заново изучает дело 1999 года об убийстве школьницы Хэ Мин Ли в Балтиморе, за которое был осуждён её бывший парень Аднан Саед.",
+ spoiler:"Сезон не даёт окончательного ответа на вопрос о виновности, но показывает слабые места следствия. Спустя годы, в 2022 году, суд отменил приговор и освободил Аднана Саеда; юридическая история дела продолжалась и после этого.",
+ whyWatch:["Эталон расследовательской журналистики в аудио","Честный разговор о сомнениях","Идеальный спутник для долгой дороги"],coverGradient:["#C9922F","#2B1D16"]}
+];
+
+const DEMO_REVIEWS = [
+["casablanca","Вера",10,"Думала, старое кино будет скучным, а оторваться не могла. Финал в тумане — шедевр.",3,14],
+["cranes","Людмила",10,"Смотрела с мамой, обе плакали. Какая операторская работа для 1957 года!",8,21],
+["moscow-tears","Галина Петровна",10,"Смотрю с молодости и каждый раз плачу в одном и том же месте. Настоящее кино.",12,18],
+["brat","Саша",8,"Жёстко, но честно. Музыка «Наутилуса» до сих пор в плейлисте.",19,6],
+["life-beautiful","Елена",10,"Не думала, что можно так рассказать о трагедии. Светлая и очень важная картина.",25,15],
+["amelie","Оля",9,"Включаю каждую осень, когда хочется немного волшебства. Лучшее лекарство от хандры.",5,11],
+["spirited-away","Дима",10,"Показал дочке, теперь это наш семейный фильм. Безликий тоже стал членом семьи 🙂",9,20],
+["three-idiots","Аня",9,"Три часа пролетели незаметно! Смеялась и плакала, а потом позвонила старым друзьям.",31,9],
+["leviathan","Андрей",8,"Тяжёлый, но очень сильный фильм. Пейзажи Севера до сих пор перед глазами.",14,4],
+["parasite","Марина",9,"Смотрела с мужем, а потом час обсуждали за чаем. Так злободневно и так красиво снято!",2,12],
+["parasite","Тимур",10,"Лестницы в этом фильме — отдельный персонаж. Пересмотрел дважды и нашёл новые детали.",40,7],
+["liquidation","Вика",9,"Пересматриваем всей семьёй, папа цитирует Гоцмана наизусть. Одесса как живая!",6,17],
+["dark","Паша",10,"Рисовал схему родства на листе А3. Лучший сериал, который я видел.",22,13],
+["breaking-bad","Игорь",10,"Медленно разгоняется, но потом не отпускает. Финал идеальный.",35,10],
+["planet-earth-2","Наталья",10,"Смотрели всей семьёй, сцена с игуанами — мы кричали в голос!",16,8],
+["octopus","Рустам",9,"Неожиданно трогательно. После фильма захотелось чаще бывать на природе.",28,5],
+["kinopanorama","Борис Аркадьевич",9,"В детстве ждал каждый выпуск — так узнавали, что скоро выйдет в кинотеатрах. Тёплые воспоминания.",44,3],
+["animal-world","Лиза",10,"Голос Николая Дроздова — это детство. Теперь смотрю старые выпуски с сыном.",11,19],
+["serial","Ксения",8,"Слушала по дороге на работу и иногда сидела в машине ещё 10 минут, чтобы дослушать.",52,2]
+];
+
+/* Премьеры: заполните реальными подтверждёнными данными и уберите isPlaceholder */
+const PREMIERES = [
+{id:"prem-1",title:"Российский фильм",type:"film",region:"ru",country:"Россия",releaseDate:null,platform:"Кинотеатры",teaser:"",isPlaceholder:true,coverGradient:["#7A2E3A","#C8553D"]},
+{id:"prem-2",title:"Российский сериал",type:"series",region:"ru",country:"Россия",releaseDate:null,platform:"Онлайн-платформа",teaser:"",isPlaceholder:true,coverGradient:["#2F4A5A","#C8553D"]},
+{id:"prem-3",title:"Документальный проект",type:"documentary",region:"ru",country:"Россия",releaseDate:null,platform:"Онлайн-платформа",teaser:"",isPlaceholder:true,coverGradient:["#6E7E58","#B07A4F"]},
+{id:"prem-4",title:"Мировая премьера",type:"film",region:"world",country:"Страна уточняется",releaseDate:null,platform:"Кинотеатры",teaser:"",isPlaceholder:true,coverGradient:["#2B1D16","#D9A441"]},
+{id:"prem-5",title:"Мировая премьера",type:"film",region:"world",country:"Страна уточняется",releaseDate:null,platform:"Кинотеатры",teaser:"",isPlaceholder:true,coverGradient:["#3B2F2A","#C9922F"]},
+{id:"prem-6",title:"Зарубежный сериал",type:"series",region:"world",country:"Страна уточняется",releaseDate:null,platform:"Стриминг",teaser:"",isPlaceholder:true,coverGradient:["#1E1512","#7A2E3A"]}
+];
+
+const TYPES = {
+  film:{label:"Фильм",plural:"Фильмы",color:"var(--c-film)"},
+  series:{label:"Сериал",plural:"Сериалы",color:"var(--c-series)"},
+  documentary:{label:"Документальное",plural:"Документальное",color:"var(--c-documentary)"},
+  tvshow:{label:"Передача",plural:"Передачи",color:"var(--c-tvshow)"},
+  podcast:{label:"Подкаст",plural:"Подкасты",color:"var(--c-podcast)"}
+};
+const ERAS = [
+  {id:"classic",label:"Золотая классика",range:[0,1959],hint:"до 1960"},
+  {id:"thaw",label:"Оттепель и застой",range:[1960,1985],hint:"1960–1985"},
+  {id:"break",label:"Перелом эпох",range:[1986,1999],hint:"1986–1999"},
+  {id:"zero",label:"Нулевые",range:[2000,2009],hint:"2000–2009"},
+  {id:"new",label:"Новое кино",range:[2010,9999],hint:"2010 – сегодня"}
+];
+const MOODS = [
+  ["cozy","Для уютного вечера под пледом","Что-то тёплое, после чего хочется улыбаться"],
+  ["classic","Золотая классика","Фильмы и передачи, проверенные десятилетиями"],
+  ["ourcinema","Наше кино: от СССР до наших дней","Советская классика, 90-е и современное российское кино"],
+  ["think","Когда хочется подумать","Истории, которые не отпускают после титров"],
+  ["world","Кино со всего света","Корея, Франция, Япония, Индия и не только"],
+  ["binge","Захватывает с первой серии","Осторожно: «ещё одну серию» затянется до утра"],
+  ["inspire","Документально и вдохновляюще","Настоящая жизнь удивительнее любого вымысла"],
+  ["tv","Телевизор нашего детства","Передачи, которые смотрели всей семьёй"]
+];
+const GENRE_COLORS = ["#C8553D","#7A2E3A","#D9A441","#8A9A6B","#B07A4F","#2F4A5A","#E0A07A","#9C6B8A","#5E7A6B","#6B4A3A","#C9922F","#A9432F"];
+const AVATAR_COLORS = ["#C8553D","#7A2E3A","#B07A4F","#6E7E58","#2F4A5A","#9C6B8A","#A9432F"];
+const NOW_YEAR = new Date().getFullYear();
+
+/* ================= УТИЛИТЫ ================= */
+const $ = (s, r=document) => r.querySelector(s);
+const $$ = (s, r=document) => [...r.querySelectorAll(s)];
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const store = {
+  get(k, def){ try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : def; } catch(e){ return def; } },
+  set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} }
+};
+const byId = id => TITLES.find(t => t.id === id);
+const plural = (n, f) => { const a=Math.abs(n)%100, b=a%10; if(a>10&&a<20) return f[2]; if(b>1&&b<5) return f[1]; if(b===1) return f[0]; return f[2]; };
+const fmtNum = n => n.toFixed(1).replace(".", ",");
+const isoDaysAgo = d => { const x=new Date(); x.setDate(x.getDate()-d); return x.toISOString().slice(0,10); };
+const fmtDate = iso => new Date(iso+"T12:00:00").toLocaleDateString("ru-RU",{day:"numeric",month:"long",year:"numeric"});
+const yearRange = t => [t.year, t.ongoing ? NOW_YEAR : (t.yearEnd || t.year)];
+const yearLabel = t => t.ongoing ? `с ${t.year}` : (t.yearEnd && t.yearEnd !== t.year ? `${t.year}–${t.yearEnd}` : `${t.year}`);
+const overlaps = (a, b) => a[0] <= b[1] && b[0] <= a[1];
+const ICON = {
+  heart:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>',
+  sun:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>',
+  moon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>',
+  trophy:'<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:3px"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4"/></svg>'
+};
+
+/* ================= СОСТОЯНИЕ ================= */
+let userReviews = store.get("pp_reviews", []);
+let helpfulVotes = store.get("pp_helpful", []);
+let favs = store.get("pp_favs", []);
+const demoReviews = DEMO_REVIEWS.map((r,i) => ({id:"d"+i,titleId:r[0],author:r[1],rating:r[2],text:r[3],date:isoDaysAgo(r[4] % 60),hasSpoilers:false,helpful:r[5],isDemo:true}));
+const allReviews = () => [...demoReviews, ...userReviews];
+const reviewsFor = id => allReviews().filter(r => r.titleId === id).sort((a,b) => b.date.localeCompare(a.date));
+const viewerAvg = id => { const rs = reviewsFor(id); return rs.length ? rs.reduce((s,r)=>s+r.rating,0)/rs.length : null; };
+const helpfulCount = r => r.helpful + (helpfulVotes.includes(r.id) ? 1 : 0);
+
+const defaultFilters = () => ({type:"all",origin:"all",genres:[],countries:[],periodMode:"era",periods:[],minRating:0,sort:"rating",q:""});
+let F = defaultFilters();
+
+/* ================= ОБЛОЖКИ ================= */
+function poster(t, opts={}){
+  const g = t.coverGradient || ["#7A2E3A","#C8553D"];
+  const long = t.title.length > 14 ? " long" : "";
+  const age = NOW_YEAR - t.year;
+  const era = opts.badges === false ? "" : (age >= 40 ? '<span class="badge-era">Классика</span>' : (age <= 2 ? '<span class="badge-era">Новинка</span>' : ""));
+  const fav = opts.fav ? `<button class="fav-btn" data-fav="${t.id}" aria-pressed="${favs.includes(t.id)}" aria-label="${favs.includes(t.id)?"Убрать из избранного":"В избранное"}: ${esc(t.title)}">${ICON.heart}</button>` : "";
+  return `<div class="poster${opts.sm?" sm":""}" style="--g1:${g[0]};--g2:${g[1]}" role="img" aria-label="Обложка: ${esc(t.title)}">
+    <div class="poster-top"><span class="ptype">${TYPES[t.type].label}</span>${fav}</div>
+    <span class="poster-title${long}" aria-hidden="true">${esc(t.title)}</span>
+    ${era}
+    <div class="poster-foot" aria-hidden="true"><span class="yr">${yearLabel(t)}</span><span>${(t.countryCode||[]).join(" / ")}</span></div>
+  </div>`;
+}
+
+/* ================= HERO ================= */
+function renderHero(){
+  const countries = new Set(TITLES.flatMap(t => t.country));
+  const decades = new Set(TITLES.map(t => Math.floor(t.year/10)*10));
+  const n = allReviews().length;
+  $("#heroFacts").innerHTML = `<span><b>${TITLES.length}</b>${plural(TITLES.length,["проект","проекта","проектов"])}</span><span><b>${countries.size}</b>${plural(countries.size,["страна","страны","стран"])}</span><span><b>${decades.size}</b>${plural(decades.size,["десятилетие","десятилетия","десятилетий"])}</span><span><b>${n}</b>${plural(n,["отзыв","отзыва","отзывов"])}</span>`;
+}
+let tipId = null;
+function renderTip(){
+  let t; do { t = TITLES[Math.floor(Math.random()*TITLES.length)]; } while (TITLES.length > 1 && t.id === tipId);
+  tipId = t.id;
+  $("#tip").innerHTML = `<div class="ticket-stub" aria-hidden="true"><span>Совет вечера</span></div>
+  <div class="ticket-body">
+    <h2 class="sr-only">Совет вечера</h2>
+    <div class="ticket-meta"><span>${TYPES[t.type].label}</span><span>${yearLabel(t)}</span><span>${esc(t.country.join(", "))}</span></div>
+    <h2>${esc(t.title)}</h2>
+    ${t.originalTitle ? `<div class="orig">${esc(t.originalTitle)}</div>` : ""}
+    <p class="verdict">«${esc(t.verdict)}»</p>
+    <div class="ticket-row">
+      <span class="ticket-score">${fmtNum(t.editorRating)} <small>оценка редакции</small></span>
+      <div class="ticket-actions"><button class="btn btn-ghost btn-sm" id="tipNext">Другой совет</button><button class="btn btn-primary btn-sm" data-open="${t.id}">Подробнее</button></div>
+    </div>
+  </div>`;
+  $("#tipNext").onclick = renderTip;
+}
+
+/* ================= ПРЕМЬЕРЫ ================= */
+let premRegion = "all";
+function renderPremieres(){
+  const list = PREMIERES.filter(p => premRegion === "all" || p.region === premRegion);
+  const today = new Date(); today.setHours(0,0,0,0);
+  $("#premStrip").innerHTML = list.map(p => {
+    let badge = '<span class="prem-badge">Премьера</span>', count = "";
+    if (p.releaseDate){
+      const d = Math.round((new Date(p.releaseDate+"T00:00:00") - today)/864e5);
+      if (d > 0) count = `До премьеры ${d} ${plural(d,["день","дня","дней"])}`;
+      else if (d === 0) count = "Премьера сегодня!";
+      else badge = '<span class="prem-badge out">Уже вышло</span>';
+    }
+    const reminded = favs.includes(p.id);
+    const tp = {title:p.title,type:p.type,year:NOW_YEAR,countryCode:[p.region==="ru"?"RU":"МИР"],coverGradient:p.coverGradient};
+    return `<article class="prem">
+      <div class="poster" style="--g1:${p.coverGradient[0]};--g2:${p.coverGradient[1]}" aria-hidden="true">
+        <div class="poster-top"><span class="ptype">${TYPES[p.type].label}</span>${badge}</div>
+        <span class="poster-title${p.title.length>14?" long":""}">${esc(p.title)}</span>
+        <div class="poster-foot"><span>${p.region==="ru"?"Наше кино":"Мировое кино"}</span></div>
+      </div>
+      <div class="prem-body">
+        <h3>${esc(p.title)}</h3>
+        <div class="prem-meta"><span>${esc(p.country)}</span><span>${p.releaseDate ? fmtDate(p.releaseDate) : "Дата уточняется"}</span><span>${esc(p.platform)}</span></div>
+        <p class="${p.isPlaceholder?"placeholder-note":""}">${p.isPlaceholder ? "Скоро здесь будет анонс. Мы добавим его, как только подтвердится дата выхода." : esc(p.teaser)}</p>
+        <div class="prem-foot"><span class="countdown">${count}</span>
+          ${p.isPlaceholder ? '<button class="btn btn-ghost btn-sm" disabled aria-disabled="true">Ждём дату</button>' : `<button class="btn btn-ghost btn-sm" data-remind="${p.id}" aria-pressed="${reminded}">${reminded?"Напомним":"Напомнить"}</button>`}
+        </div>
+      </div>
+    </article>`;
+  }).join("") || '<p class="placeholder-note">Пока анонсов нет. Загляните чуть позже.</p>';
+}
+
+/* ================= ФИЛЬТРЫ ================= */
+function periodOptions(){
+  if (F.periodMode === "era") return ERAS.map(e => ({id:e.id,label:`${e.label}`,hint:e.hint,range:e.range}));
+  const decs = new Set();
+  TITLES.forEach(t => { const [a,b] = yearRange(t); for (let d=Math.floor(a/10)*10; d<=b; d+=10) decs.add(d); });
+  return [...decs].sort().map(d => ({id:String(d),label:`${d}-е`,range:[d,d+9]}));
+}
+function matchesPeriod(t){
+  if (!F.periods.length) return true;
+  const opts = periodOptions().filter(o => F.periods.includes(o.id));
+  return opts.some(o => overlaps(yearRange(t), o.range));
+}
+function filtered(ignoreType){
+  const q = F.q.trim().toLowerCase();
+  let list = TITLES.filter(t =>
+    (ignoreType || F.type === "all" || t.type === F.type) &&
+    (F.origin === "all" || t.origin === F.origin) &&
+    (!F.genres.length || t.genres.some(g => F.genres.includes(g))) &&
+    (!F.countries.length || t.country.some(c => F.countries.includes(c))) &&
+    matchesPeriod(t) &&
+    t.editorRating >= F.minRating &&
+    (!q || (t.title + " " + t.originalTitle + " " + t.creator).toLowerCase().includes(q))
+  );
+  const s = F.sort;
+  list.sort((a,b) => s==="year-desc" ? b.year-a.year : s==="year-asc" ? a.year-b.year : s==="title" ? a.title.localeCompare(b.title,"ru") : s==="reviews" ? reviewsFor(b.id).length-reviewsFor(a.id).length : b.editorRating-a.editorRating);
+  return list;
+}
+function renderFilterUI(){
+  const base = filtered(true);
+  const tabs = [["all","Все",base.length], ...Object.entries(TYPES).map(([k,v]) => [k, v.plural, base.filter(t=>t.type===k).length])];
+  $("#typeTabs").innerHTML = tabs.map(([k,l,n]) => `<button data-type="${k}" aria-pressed="${F.type===k}">${l}<span class="n">${n}</span></button>`).join("");
+  $$("#originSeg button").forEach(b => b.setAttribute("aria-pressed", b.dataset.origin === F.origin));
+  $$("#periodMode button").forEach(b => b.setAttribute("aria-pressed", b.dataset.mode === F.periodMode));
+  const genres = [...new Set(TITLES.flatMap(t => t.genres))].sort((a,b)=>a.localeCompare(b,"ru"));
+  $("#genreChips").innerHTML = genres.map(g => `<button class="chip" data-genre="${esc(g)}" aria-pressed="${F.genres.includes(g)}">${esc(g)}</button>`).join("");
+  const countries = [...new Set(TITLES.flatMap(t => t.country))].sort((a,b)=>a.localeCompare(b,"ru"));
+  $("#countryChips").innerHTML = countries.map(c => `<button class="chip" data-country="${esc(c)}" aria-pressed="${F.countries.includes(c)}">${esc(c)}</button>`).join("");
+  $("#periodChips").innerHTML = periodOptions().map(o => `<button class="chip" data-period="${o.id}" aria-pressed="${F.periods.includes(o.id)}">${esc(o.label)}${o.hint?`<span class="n">${o.hint}</span>`:""}</button>`).join("");
+  $("#minRating").value = F.minRating; $("#minRatingOut").textContent = F.minRating ? fmtNum(F.minRating) : "0";
+  $("#sortSel").value = F.sort;
+  const extra = F.genres.length + F.countries.length + F.periods.length;
+  $("#moreToggle").textContent = extra ? `Жанр, страна, эпоха (${extra})` : "Жанр, страна, эпоха";
+}
+function cardHTML(t){
+  const avg = viewerAvg(t.id), n = reviewsFor(t.id).length;
+  return `<article class="card" data-open="${t.id}" tabindex="0" aria-label="${esc(t.title)}, ${yearLabel(t)}">
+    ${poster(t,{fav:true})}
+    <div class="card-info">
+      <h3>${esc(t.title)}</h3>
+      ${t.originalTitle ? `<div class="card-orig">${esc(t.originalTitle)}</div>` : ""}
+      <div class="meta"><span>${yearLabel(t)}</span><span>${esc(t.country.join(", "))}</span><span>${esc(t.duration)}</span></div>
+      <div class="chips">${t.genres.slice(0,3).map(g=>`<span class="tag">${esc(g)}</span>`).join("")}</div>
+      <div class="ratings"><span>Редакция <span class="star">★</span> <b>${fmtNum(t.editorRating)}</b></span><span>Зрители <span class="star">★</span> <b>${avg?fmtNum(avg):"—"}</b> <small>(${n})</small></span></div>
+      <p class="clamp">${esc(t.synopsis)}</p>
+      <button class="btn btn-ghost btn-sm" data-open="${t.id}">Подробнее и сюжет</button>
+    </div>
+  </article>`;
+}
+function renderCatalog(){
+  renderFilterUI();
+  const list = filtered();
+  $("#resultLine").textContent = list.length ? `Нашли ${list.length} ${plural(list.length,["проект","проекта","проектов"])}. Приятного просмотра!` : "";
+  $("#grid").innerHTML = list.length ? list.map(cardHTML).join("") : `<div class="empty" style="grid-column:1/-1">
+    <svg viewBox="0 0 120 80" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M30 70V38a10 10 0 0 1 10-10h40a10 10 0 0 1 10 10v32"/><path d="M22 48h12v22M98 48H86v22M34 56h52M22 70h76"/><path d="M48 14l4-6M60 12V4M72 14l-4-6"/></svg>
+    <h3>Здесь пока пусто</h3><p>Попробуйте ослабить фильтры — кино любит свободу.</p><button class="btn btn-primary" data-reset>Сбросить фильтры</button></div>`;
+}
+function filtersToHash(){
+  const p = new URLSearchParams();
+  const d = defaultFilters();
+  if (F.type!==d.type) p.set("type",F.type);
+  if (F.origin!==d.origin) p.set("origin",F.origin);
+  if (F.genres.length) p.set("g",F.genres.join("|"));
+  if (F.countries.length) p.set("c",F.countries.join("|"));
+  if (F.periodMode!==d.periodMode) p.set("pm",F.periodMode);
+  if (F.periods.length) p.set("p",F.periods.join("|"));
+  if (F.minRating) p.set("r",F.minRating);
+  if (F.sort!==d.sort) p.set("s",F.sort);
+  if (F.q) p.set("q",F.q);
+  const qs = p.toString();
+  try { history.replaceState(null,"", "#catalog" + (qs ? "?" + qs : "")); } catch(e){}
+}
+function hashToFilters(h){
+  const qs = h.split("?")[1]; if (!qs) return;
+  const p = new URLSearchParams(qs);
+  F = defaultFilters();
+  if (p.get("type") && (p.get("type")==="all" || TYPES[p.get("type")])) F.type = p.get("type");
+  if (["ru","world"].includes(p.get("origin"))) F.origin = p.get("origin");
+  if (p.get("g")) F.genres = p.get("g").split("|");
+  if (p.get("c")) F.countries = p.get("c").split("|");
+  if (p.get("pm")==="decade") F.periodMode = "decade";
+  if (p.get("p")) F.periods = p.get("p").split("|");
+  if (p.get("r")) F.minRating = Math.min(10, Math.max(0, parseFloat(p.get("r"))||0));
+  if (p.get("s")) F.sort = p.get("s");
+  if (p.get("q")) F.q = p.get("q");
+  if (F.genres.length || F.countries.length || F.periods.length) openMore(true);
+}
+function setFilter(patch, scroll){
+  Object.assign(F, patch);
+  renderCatalog(); filtersToHash();
+  if (scroll) document.getElementById("catalog").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
+}
+const toggleIn = (arr, v) => arr.includes(v) ? arr.filter(x => x !== v) : [...arr, v];
+function openMore(force){
+  const el = $("#moreFilters"), open = force ?? !el.classList.contains("open");
+  el.classList.toggle("open", open); $("#moreToggle").setAttribute("aria-expanded", open);
+}
+
+/* ================= ПОДБОРКИ ================= */
+function renderShelves(){
+  $("#shelves").innerHTML = MOODS.map(([k,title,sub]) => {
+    const items = TITLES.filter(t => t.moods.includes(k)).sort((a,b)=>b.editorRating-a.editorRating);
+    if (!items.length) return "";
+    return `<div class="shelf"><h3>${title}</h3><p>${sub}</p><div class="strip">${items.map(t => `<button class="mini" data-open="${t.id}">${poster(t,{sm:true,badges:false})}<span class="t">${esc(t.title)}</span></button>`).join("")}</div></div>`;
+  }).join("");
+}
+
+/* ================= СТАТИСТИКА ================= */
+function renderStats(){
+  // Жанры
+  const gc = {}; TITLES.forEach(t => gc[t.genres[0]] = (gc[t.genres[0]]||0) + 1);
+  const genres = Object.entries(gc).sort((a,b)=>b[1]-a[1]);
+  const total = TITLES.length, R = 70, C = 2*Math.PI*R;
+  let off = 0;
+  const segs = genres.map(([g,n],i) => { const len = n/total*C; const s = `<circle class="seg-c" data-genre="${esc(g)}" tabindex="0" role="button" aria-label="${esc(g)}: ${n}" cx="100" cy="100" r="${R}" fill="none" stroke="${GENRE_COLORS[i%GENRE_COLORS.length]}" stroke-width="26" stroke-dasharray="${Math.max(len-2,1)} ${C}" stroke-dashoffset="${-off}" transform="rotate(-90 100 100)"><title>${esc(g)}: ${n}</title></circle>`; off += len; return s; }).join("");
+  $("#donut").innerHTML = `<svg class="donut" viewBox="0 0 200 200" width="220" height="220" aria-label="Кольцевая диаграмма жанров">${segs}<text x="100" y="96" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="36" font-weight="700" fill="var(--text)">${total}</text><text x="100" y="120" text-anchor="middle" font-size="13" fill="var(--text-muted)">${plural(total,["проект","проекта","проектов"])}</text></svg>
+    <ul class="legend">${genres.map(([g,n],i)=>`<li><button data-genre="${esc(g)}"><span class="dot" style="background:${GENRE_COLORS[i%GENRE_COLORS.length]}"></span>${esc(g)}<span class="cnt">${n}</span></button></li>`).join("")}</ul>`;
+  // Типы
+  const max = Math.max(...Object.keys(TYPES).map(k => TITLES.filter(t=>t.type===k).length));
+  $("#typeBars").innerHTML = Object.entries(TYPES).map(([k,v]) => { const n = TITLES.filter(t=>t.type===k).length; return `<button class="bar-row" data-type-stat="${k}"><span>${v.plural}</span><span class="bar-track"><span class="bar-fill" style="display:block;width:${n/max*100}%;background:${v.color}"></span></span><b>${n}</b></button>`; }).join("");
+  // Наше / мировое
+  const ru = TITLES.filter(t=>t.origin==="ru").length, w = total - ru;
+  $("#originBar").innerHTML = `<button data-origin-stat="ru" style="flex:${ru};background:var(--wine)">Наше кино, ${Math.round(ru/total*100)}%</button><button data-origin-stat="world" style="flex:${w};background:var(--accent-strong)">Мировое, ${Math.round(w/total*100)}%</button>`;
+  // Таймлайн
+  const Y0 = 1937, Y1 = NOW_YEAR + 2, pos = y => (y - Y0)/(Y1 - Y0)*100;
+  const sorted = [...TITLES].sort((a,b)=>a.year-b.year);
+  const rows = []; let html = "";
+  sorted.forEach(t => {
+    let r = 0; while (rows[r] !== undefined && t.year - rows[r] < 4) r++;
+    rows[r] = t.year;
+    html += `<button class="tl-dot" data-open="${t.id}" style="left:${pos(t.year)}%;bottom:${72 + 16 + r*26}px;background:${TYPES[t.type].color}" data-tip="${esc(t.title)}, ${t.year}" aria-label="${esc(t.title)}, ${t.year}"></button>`;
+  });
+  for (let d = 1940; d < Y1; d += 10) html += `<span class="tl-dec" style="left:${pos(d)}%">${d}</span>`;
+  ERAS.forEach(e => { const a = Math.max(e.range[0], Y0), b = Math.min(e.range[1]+1, Y1); const n = TITLES.filter(t => t.year >= e.range[0] && t.year <= e.range[1]).length;
+    html += `<span class="tl-era" style="left:${pos(a)}%;width:${pos(b)-pos(a)}%">${e.label}<br>${n} ${plural(n,["проект","проекта","проектов"])}</span>`; });
+  $("#timeline").innerHTML = `<div class="tl-axis"></div>` + html;
+  $("#tlLegend").innerHTML = Object.values(TYPES).map(v => `<span><i style="background:${v.color}"></i>${v.plural}</span>`).join("");
+  // Страны
+  const cc = {}; TITLES.forEach(t => t.country.forEach(c => cc[c] = (cc[c]||0)+1));
+  $("#countryStats").innerHTML = Object.entries(cc).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0],"ru")).map(([c,n]) => `<button class="chip" data-country-stat="${esc(c)}">${esc(c)}<span class="n">${n}</span></button>`).join("");
+}
+
+/* ================= ОТЗЫВЫ ================= */
+const avatarColor = name => AVATAR_COLORS[[...name].reduce((s,c)=>s+c.charCodeAt(0),0) % AVATAR_COLORS.length];
+const initials = name => name.trim().split(/\s+/).slice(0,2).map(w=>w[0]).join("").toUpperCase();
+function reviewHTML(r, showProject){
+  const t = byId(r.titleId); if (!t) return "";
+  return `<article class="review" data-rid="${r.id}">
+    <div class="review-head"><span class="avatar" style="background:${avatarColor(r.author)}" aria-hidden="true">${esc(initials(r.author))}</span>
+      <span class="who"><b>${esc(r.author)}</b><small>${fmtDate(r.date)}</small></span>
+      <span class="review-score" aria-label="Оценка ${r.rating} из 10"><span class="star">★</span> ${r.rating}<small style="font-size:13px;color:var(--text-muted)">/10</small></span></div>
+    ${showProject ? `<button class="review-proj" data-open="${t.id}">${esc(t.title)}</button>` : ""}
+    ${r.hasSpoilers ? '<span class="spoiler-tag">Есть спойлеры. Нажмите на текст, чтобы прочитать</span>' : ""}
+    <p class="review-text${r.hasSpoilers?" blurred":""}" ${r.hasSpoilers?'tabindex="0" role="button" aria-label="Показать отзыв со спойлерами"':""}>${esc(r.text)}</p>
+    <div class="review-foot"><button class="helpful" data-helpful="${r.id}" aria-pressed="${helpfulVotes.includes(r.id)}" ${r.mine?"disabled":""}>Полезно 👍 ${helpfulCount(r)}</button>
+      ${r.mine ? `<button class="link-btn" data-del="${r.id}">Удалить мой отзыв</button>` : ""}</div>
+  </article>`;
+}
+function renderFeed(){
+  const list = allReviews().sort((a,b)=>b.date.localeCompare(a.date)).slice(0,8);
+  $("#feed").innerHTML = list.map(r => reviewHTML(r,true)).join("");
+}
+let formSeq = 0;
+function formHTML(titleId){
+  const k = "f" + (++formSeq);
+  const mine = titleId ? userReviews.find(r => r.titleId === titleId) : null;
+  const opts = TITLES.map(t => `<option value="${t.id}">${esc(t.title)}</option>`).join("");
+  return `<form class="form-card" data-review-form="${k}" ${titleId?`data-title="${titleId}"`:""} novalidate>
+    <h3>${mine ? "Ваш отзыв" : "Оставить отзыв"}</h3>
+    <p>${mine ? "Вы уже делились впечатлениями. Можно их обновить." : "Пара тёплых слов поможет кому-то выбрать фильм на вечер."}</p>
+    ${titleId ? "" : `<div class="field"><label for="${k}-t">Проект</label><select id="${k}-t" name="title"><option value="">Выберите из каталога</option>${opts}</select><span class="err" aria-live="polite"></span></div>`}
+    <div class="field"><label for="${k}-n">Ваше имя</label><input id="${k}-n" name="author" type="text" maxlength="40" autocomplete="nickname" value="${mine?esc(mine.author):""}"><span class="err" aria-live="polite"></span></div>
+    <fieldset class="field"><legend>Оценка</legend><div class="stars" data-stars>${Array.from({length:10},(_,i)=>`<input type="radio" id="${k}-s${i+1}" name="rating" value="${i+1}" ${mine&&mine.rating===i+1?"checked":""}><label for="${k}-s${i+1}" data-v="${i+1}" aria-label="${i+1} из 10">★</label>`).join("")}<span class="stars-val">${mine?mine.rating+" из 10":""}</span></div><span class="err" aria-live="polite"></span></fieldset>
+    <div class="field"><label for="${k}-x">Отзыв</label><textarea id="${k}-x" name="text" maxlength="1000">${mine?esc(mine.text):""}</textarea><span class="hint"><span>От 20 до 1000 символов</span><span data-counter>${mine?mine.text.length:0} / 1000</span></span><span class="err" aria-live="polite"></span></div>
+    <label class="check"><input type="checkbox" name="spoilers" ${mine&&mine.hasSpoilers?"checked":""}> В отзыве есть спойлеры</label>
+    <div class="form-actions"><button class="btn btn-primary" type="submit">${mine?"Сохранить изменения":"Отправить отзыв"}</button></div>
+  </form>`;
+}
+function paintStars(form, v){ $$("[data-stars] label", form).forEach(l => l.classList.toggle("on", +l.dataset.v <= v)); }
+function initForm(form){
+  if (!form) return;
+  const checked = $("input[name=rating]:checked", form); paintStars(form, checked ? +checked.value : 0);
+  const stars = $("[data-stars]", form);
+  stars.addEventListener("mouseover", e => { const l = e.target.closest("label"); if (l) paintStars(form, +l.dataset.v); });
+  stars.addEventListener("mouseleave", () => { const c = $("input[name=rating]:checked", form); paintStars(form, c ? +c.value : 0); });
+  stars.addEventListener("change", e => { paintStars(form, +e.target.value); $(".stars-val", form).textContent = e.target.value + " из 10"; clearErr(e.target); });
+  const ta = $("textarea", form);
+  ta.addEventListener("input", () => { $("[data-counter]", form).textContent = ta.value.length + " / 1000"; clearErr(ta); });
+  $$("input[type=text],select", form).forEach(i => i.addEventListener("input", () => clearErr(i)));
+  const sel = $("select[name=title]", form);
+  if (sel) sel.addEventListener("change", () => { const mine = userReviews.find(r => r.titleId === sel.value); if (mine) toast("Вы уже оставляли отзыв на этот проект. Его можно обновить в карточке проекта"); });
+  form.addEventListener("submit", e => { e.preventDefault(); submitReview(form); });
+}
+function setErr(el, msg){ const f = el.closest(".field"); f.classList.add("invalid"); $(".err", f).textContent = msg; }
+function clearErr(el){ const f = el.closest(".field"); if (!f) return; f.classList.remove("invalid"); $(".err", f).textContent = ""; }
+function submitReview(form){
+  const titleId = form.dataset.title || form.title.value;
+  const author = form.author.value.trim(), text = form.text.value.trim();
+  const ratingEl = $("input[name=rating]:checked", form);
+  let ok = true, first = null;
+  const fail = (el, m) => { setErr(el, m); ok = false; first = first || el; };
+  if (!form.dataset.title && !titleId) fail(form.title, "Выберите, о чём хотите рассказать");
+  if (author.length < 2) fail(form.author, "Как к вам обращаться? Достаточно имени или ника");
+  if (!ratingEl) fail($("input[name=rating]", form), "Поставьте оценку звёздочками — нам очень интересно ваше мнение");
+  if (text.length < 20) fail(form.text, "Расскажите чуть подробнее — ещё пара предложений, и готово");
+  else if (/(.)\1{6,}/.test(text) || !/[a-zа-яё]{2,}/i.test(text)) fail(form.text, "Похоже, в тексте случайный набор символов. Напишите пару слов о впечатлениях");
+  if (!ok){ first.focus(); return; }
+  const existing = userReviews.find(r => r.titleId === titleId);
+  if (existing && !form.dataset.title && !confirm("Вы уже оставляли отзыв на этот проект. Заменить его новым?")) return;
+  const rev = {id: existing ? existing.id : "u"+Date.now(), titleId, author, rating:+ratingEl.value, text, date:new Date().toISOString().slice(0,10), hasSpoilers:form.spoilers.checked, helpful:0, isDemo:false, mine:true};
+  userReviews = existing ? userReviews.map(r => r.id===existing.id ? rev : r) : [...userReviews, rev];
+  store.set("pp_reviews", userReviews);
+  toast(existing ? "Обновили ваш отзыв" : "Спасибо! Ваш отзыв уже на полке 🍿");
+  refreshAfterReviews();
+  if (form.dataset.title) renderModal(titleId, true);
+  else { $("#feedForm").innerHTML = formHTML(null); initForm($("#feedForm form")); }
+}
+function refreshAfterReviews(){ renderHero(); renderFeed(); renderCatalog(); injectLD(); }
+
+/* ================= МОДАЛЬНОЕ ОКНО ================= */
+let lastFocus = null, modalOpenId = null;
+function renderModal(id, keepScroll){
+  const t = byId(id); if (!t) return;
+  const revs = reviewsFor(id), avg = viewerAvg(id);
+  const dist = Array.from({length:10},(_,i)=>revs.filter(r=>r.rating===i+1).length), dmax = Math.max(1,...dist);
+  const similar = TITLES.filter(x => x.id!==id).map(x => [x, x.genres.filter(g=>t.genres.includes(g)).length + (x.type===t.type?0.5:0)]).filter(x=>x[1]>=1).sort((a,b)=>b[1]-a[1]).slice(0,3).map(x=>x[0]);
+  const isFav = favs.includes(id);
+  const plotBlock = t.spoiler
+    ? `<div class="spoiler locked" id="spoilerBox"><h3>Сюжет со спойлерами</h3><p class="sp-text">${esc(t.spoiler)}</p>
+        <div class="spoiler-gate"><b>Осторожно, спойлеры!</b><button class="btn btn-light btn-sm" id="spoilerShow">Показать</button></div>
+        <button class="btn btn-outline-light btn-sm" id="spoilerHide" style="margin-top:14px" hidden>Скрыть снова</button></div>`
+    : `<div class="highlight"><h3>${esc(t.highlightsTitle)}</h3><p>${esc(t.highlights)}</p></div>`;
+  $("#modalContent").innerHTML = `
+    <div class="m-top">
+      ${poster(t,{})}
+      <div>
+        <h2 id="mTitle">${esc(t.title)}</h2>
+        ${t.originalTitle ? `<p class="orig">${esc(t.originalTitle)}</p>` : ""}
+        <div class="meta"><span>${TYPES[t.type].label}</span><span>${yearLabel(t)}</span><span>${esc(t.country.join(", "))}</span><span>${esc(t.duration)}</span></div>
+        <p class="meta" style="margin-top:4px"><span>${t.type==="tvshow"||t.type==="podcast"?"Авторы и ведущие":t.type==="series"?"Создатели":"Режиссёр"}: ${esc(t.creator)}</span></p>
+        <div class="chips">${t.genres.map(g=>`<span class="tag">${esc(g)}</span>`).join("")}<span class="tag">${t.origin==="ru"?"Наше кино":"Мировое кино"}</span></div>
+        ${t.awards ? `<p class="m-awards">${ICON.trophy}<span>${esc(t.awards)}</span></p>` : ""}
+      </div>
+    </div>
+    <div class="m-body">
+      <div class="m-scores">
+        <div class="score-box"><div class="lbl">Оценка редакции</div><div class="score-big">${fmtNum(t.editorRating)}<small> / 10</small></div><p class="v">«${esc(t.verdict)}»</p></div>
+        <div class="score-box"><div class="lbl">Оценка зрителей</div><div class="score-big">${avg?fmtNum(avg):"—"}<small> ${revs.length} ${plural(revs.length,["отзыв","отзыва","отзывов"])}</small></div>
+          <div class="hist" aria-label="Распределение оценок зрителей">${dist.map((n,i)=>`<div style="height:${n/dmax*100}%" title="${i+1}: ${n}"></div>`).join("")}</div><div class="hist-l" aria-hidden="true">${dist.map((_,i)=>`<span>${i+1}</span>`).join("")}</div></div>
+      </div>
+      <div class="m-sec"><h3>${t.highlights ? "О проекте" : "Сюжет без спойлеров"}</h3><p>${esc(t.synopsis)}</p></div>
+      ${plotBlock}
+      <div class="m-sec"><h3>Почему стоит посмотреть</h3><ul class="why">${t.whyWatch.map(w=>`<li>${esc(w)}</li>`).join("")}</ul></div>
+      <div class="m-actions">
+        <button class="btn ${isFav?"btn-primary":"btn-ghost"}" data-fav="${id}" aria-pressed="${isFav}">${isFav?"В избранном":"В избранное"}</button>
+        <button class="btn btn-ghost" id="shareBtn">Поделиться</button>
+      </div>
+      <div class="m-sec"><h3>Отзывы</h3><div class="m-reviews">${revs.length ? revs.map(r=>reviewHTML(r,false)).join("") : '<p style="color:var(--text-muted)">Пока никто не написал. Будьте первым!</p>'}</div></div>
+      <div id="modalForm">${formHTML(id)}</div>
+      ${similar.length ? `<div class="m-sec"><h3>Похожие проекты</h3><div class="similar">${similar.map(x=>`<button class="mini" data-open="${x.id}">${poster(x,{sm:true,badges:false})}<span class="t">${esc(x.title)}</span></button>`).join("")}</div></div>` : ""}
+    </div>`;
+  initForm($("#modalForm form"));
+  const box = $("#spoilerBox");
+  if (box){
+    $("#spoilerShow").onclick = () => { box.classList.remove("locked"); $("#spoilerHide").hidden = false; $("#spoilerHide").focus(); };
+    $("#spoilerHide").onclick = () => { box.classList.add("locked"); $("#spoilerHide").hidden = true; $("#spoilerShow").focus(); };
+  }
+  $("#shareBtn").onclick = () => share(t);
+  if (!keepScroll) $("#overlay").scrollTop = 0;
+}
+function openModal(id){
+  if (!byId(id)) return;
+  if (!modalOpenId) lastFocus = document.activeElement;
+  modalOpenId = id;
+  renderModal(id);
+  $("#overlay").classList.add("open");
+  document.body.style.overflow = "hidden";
+  try { history.replaceState(null,"","#title/"+id); } catch(e){}
+  setTimeout(() => $("#modalClose").focus(), 50);
+}
+function closeModal(){
+  if (!modalOpenId) return;
+  modalOpenId = null;
+  $("#overlay").classList.remove("open");
+  document.body.style.overflow = "";
+  filtersToHash();
+  if (lastFocus && document.contains(lastFocus)) lastFocus.focus();
+}
+async function share(t){
+  const url = location.href.split("#")[0] + "#title/" + t.id;
+  if (navigator.share){ try { await navigator.share({title:t.title, text:t.verdict, url}); return; } catch(e){ if (e.name === "AbortError") return; } }
+  try { await navigator.clipboard.writeText(url); toast("Ссылка скопирована"); } catch(e){ prompt("Скопируйте ссылку:", url); }
+}
+function trapFocus(e, container){
+  if (e.key !== "Tab") return;
+  const f = $$('button:not([disabled]),[href],input:not([type=hidden]),select,textarea,[tabindex]:not([tabindex="-1"])', container).filter(el => el.offsetParent !== null);
+  if (!f.length) return;
+  const first = f[0], last = f[f.length-1];
+  if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+  else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+}
+
+/* ================= ИЗБРАННОЕ ================= */
+function toggleFav(id){
+  const was = favs.includes(id);
+  favs = toggleIn(favs, id); store.set("pp_favs", favs);
+  const isPrem = id.startsWith("prem-");
+  toast(was ? "Убрали из избранного" : (isPrem ? "Напомним о премьере" : "Сохранили. Пледик уже ждёт"));
+  updateFavUI();
+}
+function updateFavUI(){
+  const n = favs.filter(id => byId(id) || PREMIERES.some(p=>p.id===id)).length;
+  const b = $("#favCount"); b.textContent = n || ""; n ? b.removeAttribute("data-zero") : b.setAttribute("data-zero","");
+  $("#favOpen").setAttribute("aria-label", `Избранное: ${n}`);
+  $$("[data-fav]").forEach(el => {
+    const on = favs.includes(el.dataset.fav); el.setAttribute("aria-pressed", on);
+    if (el.classList.contains("btn")){ el.textContent = on ? "В избранном" : "В избранное"; el.classList.toggle("btn-primary", on); el.classList.toggle("btn-ghost", !on); }
+    else { const t = byId(el.dataset.fav); el.setAttribute("aria-label", (on?"Убрать из избранного":"В избранное") + (t?": "+t.title:"")); }
+  });
+  $$("[data-remind]").forEach(el => { const on = favs.includes(el.dataset.remind); el.setAttribute("aria-pressed", on); el.textContent = on ? "Напомним" : "Напомнить"; });
+  renderDrawer();
+}
+function renderDrawer(){
+  const items = favs.map(id => byId(id) || PREMIERES.find(p=>p.id===id)).filter(Boolean);
+  $("#drawerList").innerHTML = items.length ? items.map(t => {
+    const isPrem = !!t.region;
+    return `<li class="drawer-item"><div class="poster" style="--g1:${t.coverGradient[0]};--g2:${t.coverGradient[1]}" aria-hidden="true"></div>
+      <div>${isPrem ? `<b>${esc(t.title)}</b><small>Премьера: ${t.releaseDate?fmtDate(t.releaseDate):"дата уточняется"}</small>` : `<button class="open-it" data-open="${t.id}">${esc(t.title)}</button><small>${TYPES[t.type].label}, ${yearLabel(t)}</small>`}</div>
+      <button class="icon-btn" data-unfav="${t.id}" aria-label="Убрать ${esc(t.title)} из избранного"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></li>`;
+  }).join("") : '<li style="color:var(--text-muted)">Пока пусто. Нажмите ♡ на карточке, и она появится здесь.</li>';
+}
+function openDrawer(){ lastFocus = document.activeElement; $("#drawer").classList.add("open"); $("#scrim").classList.add("open"); setTimeout(()=>$("#drawerClose").focus(),50); }
+function closeDrawer(){ $("#drawer").classList.remove("open"); $("#scrim").classList.remove("open"); if (lastFocus) lastFocus.focus(); }
+
+/* ================= ПРОЧЕЕ ================= */
+function toast(msg){
+  const el = document.createElement("div"); el.className = "toast"; el.textContent = msg;
+  $("#toasts").appendChild(el); setTimeout(() => el.remove(), 2800);
+}
+function applyTheme(t){
+  if (t) document.documentElement.setAttribute("data-theme", t); else document.documentElement.removeAttribute("data-theme");
+  const dark = t ? t === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  $("#themeToggle").innerHTML = dark ? ICON.sun : ICON.moon;
+  $("#themeToggle").setAttribute("aria-label", dark ? "Включить светлую тему" : "Включить тёмную тему");
+}
+function injectLD(){
+  const ld = {"@context":"https://schema.org","@type":"ItemList",name:"Каталог «Плёнка и плед»",itemListElement:TITLES.map((t,i)=>{
+    const revs = reviewsFor(t.id), avg = viewerAvg(t.id);
+    const item = {"@type": t.type==="film"||t.type==="documentary" ? "Movie" : t.type==="series" ? "TVSeries" : "CreativeWork", name:t.title, alternateName:t.originalTitle||undefined, dateCreated:String(t.year), countryOfOrigin:t.country.join(", "), genre:t.genres, description:t.synopsis};
+    if (avg) item.aggregateRating = {"@type":"AggregateRating",ratingValue:avg.toFixed(1),bestRating:10,worstRating:1,ratingCount:revs.length};
+    item.review = revs.slice(0,3).map(r=>({"@type":"Review",author:{"@type":"Person",name:r.author},reviewRating:{"@type":"Rating",ratingValue:r.rating,bestRating:10},reviewBody:r.text,datePublished:r.date}));
+    return {"@type":"ListItem",position:i+1,item};
+  })};
+  let s = $("#ld"); if (!s){ s = document.createElement("script"); s.type = "application/ld+json"; s.id = "ld"; document.head.appendChild(s); }
+  s.textContent = JSON.stringify(ld);
+}
+
+/* ================= СОБЫТИЯ ================= */
+document.addEventListener("click", e => {
+  const t = e.target;
+  const fav = t.closest("[data-fav]"); if (fav){ e.stopPropagation(); toggleFav(fav.dataset.fav); return; }
+  const unfav = t.closest("[data-unfav]"); if (unfav){ toggleFav(unfav.dataset.unfav); renderPremieres(); return; }
+  const remind = t.closest("[data-remind]"); if (remind){ toggleFav(remind.dataset.remind); return; }
+  const help = t.closest("[data-helpful]"); if (help){ helpfulVotes = toggleIn(helpfulVotes, help.dataset.helpful); store.set("pp_helpful", helpfulVotes); const r = allReviews().find(x=>x.id===help.dataset.helpful); $$(`[data-helpful="${help.dataset.helpful}"]`).forEach(b=>{b.setAttribute("aria-pressed",helpfulVotes.includes(r.id)); b.textContent = "Полезно 👍 " + helpfulCount(r);}); return; }
+  const del = t.closest("[data-del]"); if (del){ if (confirm("Удалить ваш отзыв?")){ const r = userReviews.find(x=>x.id===del.dataset.del); userReviews = userReviews.filter(x=>x.id!==del.dataset.del); store.set("pp_reviews", userReviews); toast("Отзыв удалён"); refreshAfterReviews(); if (modalOpenId) renderModal(modalOpenId, true); $("#feedForm").innerHTML = formHTML(null); initForm($("#feedForm form")); } return; }
+  const blurred = t.closest(".review-text.blurred"); if (blurred){ blurred.classList.remove("blurred"); blurred.removeAttribute("role"); return; }
+  const open = t.closest("[data-open]"); if (open){ if ($("#drawer").classList.contains("open")){ $("#drawer").classList.remove("open"); $("#scrim").classList.remove("open"); } openModal(open.dataset.open); return; }
+  const type = t.closest("[data-type]"); if (type){ setFilter({type:type.dataset.type}); return; }
+  const org = t.closest("[data-origin]"); if (org){ setFilter({origin:org.dataset.origin}); return; }
+  const mode = t.closest("[data-mode]"); if (mode){ setFilter({periodMode:mode.dataset.mode, periods:[]}); return; }
+  const g = t.closest("[data-genre]");
+  if (g){ if (g.closest("#genreChips")) setFilter({genres:toggleIn(F.genres, g.dataset.genre)}); else { openMore(true); setFilter({...defaultFilters(), genres:[g.dataset.genre]}, true); } return; }
+  const c = t.closest("[data-country]"); if (c){ setFilter({countries:toggleIn(F.countries, c.dataset.country)}); return; }
+  const p = t.closest("[data-period]"); if (p){ setFilter({periods:toggleIn(F.periods, p.dataset.period)}); return; }
+  const ts = t.closest("[data-type-stat]"); if (ts){ setFilter({...defaultFilters(), type:ts.dataset.typeStat}, true); return; }
+  const os = t.closest("[data-origin-stat]"); if (os){ setFilter({...defaultFilters(), origin:os.dataset.originStat}, true); return; }
+  const cs = t.closest("[data-country-stat]"); if (cs){ openMore(true); setFilter({...defaultFilters(), countries:[cs.dataset.countryStat]}, true); return; }
+  if (t.closest("[data-reset]") || t.closest("#resetBtn")){ F = defaultFilters(); $("#searchInput").value = ""; setFilter({}); return; }
+});
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape"){
+    if ($("#drawer").classList.contains("open")) return closeDrawer();
+    if (modalOpenId) return closeModal();
+    if ($("#nav").classList.contains("open")) return toggleNav(false);
+  }
+  if (modalOpenId) trapFocus(e, $("#modal"));
+  else if ($("#drawer").classList.contains("open")) trapFocus(e, $("#drawer"));
+  if ((e.key === "Enter" || e.key === " ") && e.target.matches(".card, circle.seg-c, .review-text.blurred")){ e.preventDefault(); e.target.click(); if (e.target.matches("circle.seg-c")) e.target.dispatchEvent(new MouseEvent("click",{bubbles:true})); }
+});
+$("#overlay").addEventListener("click", e => { if (e.target.id === "overlay") closeModal(); });
+$("#modalClose").onclick = closeModal;
+$("#premTabs").addEventListener("click", e => { const b = e.target.closest("[data-region]"); if (!b) return; premRegion = b.dataset.region; $$("#premTabs button").forEach(x=>x.setAttribute("aria-pressed", x===b)); renderPremieres(); });
+$("#minRating").addEventListener("input", e => setFilter({minRating:+e.target.value}));
+$("#sortSel").addEventListener("change", e => setFilter({sort:e.target.value}));
+$("#moreToggle").onclick = () => openMore();
+$("#favOpen").onclick = openDrawer;
+$("#drawerClose").onclick = closeDrawer;
+$("#scrim").onclick = closeDrawer;
+$("#toTop").onclick = () => window.scrollTo({top:0, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
+$("#themeToggle").onclick = () => {
+  const cur = document.documentElement.getAttribute("data-theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  const next = cur === "dark" ? "light" : "dark"; store.set("pp_theme", next); applyTheme(next);
+};
+function toggleNav(open){ $("#nav").classList.toggle("open", open); $("#burger").setAttribute("aria-expanded", open); document.body.style.overflow = open ? "hidden" : ""; if (open) setTimeout(()=>$("#navClose").focus(),50); }
+$("#burger").onclick = () => toggleNav(true);
+$("#navClose").onclick = () => { toggleNav(false); $("#burger").focus(); };
+$$("#nav a").forEach(a => a.addEventListener("click", () => { if ($("#nav").classList.contains("open")) toggleNav(false); }));
+// Поиск
+$("#searchToggle").onclick = () => {
+  const box = $("#searchBox"), open = !box.classList.contains("open");
+  box.classList.toggle("open", open); $("#searchToggle").setAttribute("aria-expanded", open);
+  if (open) $("#searchInput").focus();
+};
+let searchT;
+$("#searchInput").addEventListener("input", e => { clearTimeout(searchT); searchT = setTimeout(() => setFilter({q:e.target.value}, true), 250); });
+// Подписка
+$("#subForm").addEventListener("submit", e => {
+  e.preventDefault(); const v = $("#subEmail").value.trim();
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)){ $("#subErr").textContent = "Кажется, в адресе опечатка. Проверите?"; $("#subEmail").focus(); return; }
+  $("#subErr").textContent = ""; store.set("pp_email", v); /* TODO: подключить сервис рассылок */
+  $("#subEmail").value = ""; toast("Готово! Первая подборка уже в пути");
+});
+// Скролл: шапка, активный пункт, кнопка наверх
+const onScroll = () => { $(".site-header").classList.toggle("scrolled", scrollY > 40); $("#toTop").classList.toggle("show", scrollY > 800); };
+addEventListener("scroll", onScroll, {passive:true});
+if ("IntersectionObserver" in window){
+  const io = new IntersectionObserver(entries => entries.forEach(en => { if (en.isIntersecting) $$("#nav a").forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#"+en.target.id)); }), {rootMargin:"-45% 0px -50% 0px"});
+  $$("main section[id]").forEach(s => io.observe(s));
+}
+function handleHash(){
+  const h = decodeURIComponent(location.hash);
+  if (h.startsWith("#title/")) openModal(h.slice(7));
+  else if (h.startsWith("#catalog?")){ hashToFilters(h); renderCatalog(); $("#searchInput").value = F.q; }
+}
+addEventListener("hashchange", handleHash);
+matchMedia("(prefers-color-scheme: dark)").addEventListener?.("change", () => { if (!store.get("pp_theme", null)) applyTheme(null); });
+
+/* ================= ЗАПУСК ================= */
+applyTheme(store.get("pp_theme", null));
+$("#year").textContent = "© " + NOW_YEAR + " Плёнка и плед";
+$("#footTypes").innerHTML = Object.entries(TYPES).map(([k,v]) => `<li><a href="#catalog?type=${k}">${v.plural}</a></li>`).join("");
+renderHero(); renderTip(); renderPremieres(); renderCatalog(); renderShelves(); renderStats(); renderFeed();
+$("#feedForm").innerHTML = formHTML(null); initForm($("#feedForm form"));
+updateFavUI(); injectLD(); onScroll(); handleHash();
+</script>
+</body>
+</html>
